@@ -1,0 +1,82 @@
+section {
+    background-image: url(https://3.bp.blogspot.com/-ImM6VxUNZXg/Ud6Ahl95VFI/AAAAAAAABLs/wCQSGzu-HWo/s1600/City+Anime+Landscape+57.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+  }
+  .form-box {
+    background-color: rgba(133, 182, 197, 0.495);
+    position: relative;
+    width: 400px;
+    height: 525px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  /* .media  a{
+        margin-left: 10px;
+        
+        
+        
+    } */
+  
+  .media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 22px;
+  }
+  
+  .header {
+    margin-top: 1rem;
+  }
+  
+  .form {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-bottom: 100px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.758rem;
+  }
+  
+  .icon {
+    width: 16px;
+    
+  }
+  
+  
+  .icon {
+    width: px;
+    
+  }
+  button {
+    border-radius: 10px;
+    width: 200px;
+    border: 10px;
+    margin-left: 10px;
+  }
+  
+  .fa{
+     margin-right: 10px;
+  }
+  
+  .forget{
+      margin-top: 10px;
+      text-align: center;
+  }
+  .remember{
+      text-align: center;
+      color: rgb(102, 239, 193);
+  }
+  
+  

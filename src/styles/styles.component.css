@@ -1,0 +1,30 @@
+.btn-search{
+  margin-top: 4px;
+}
+
+.table{
+  overflow: auto;
+  /* border-bottom: 0.5px solid #ddd; */
+}
+
+/* width */
+.table::-webkit-scrollbar {
+  width: 0.9375rem;
+}
+
+/* Track */
+.table::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 4px grey;
+  border-radius: 1px;
+}
+
+/* Handle */
+.table::-webkit-scrollbar-thumb {
+  background: green;
+  border-radius: 1px;
+}
+
+/* Handle on hover */
+.table::-webkit-scrollbar-thumb:hover {
+  background: darkgreen;
+}

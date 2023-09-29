@@ -1,0 +1,13 @@
+<div class="grid-container">
+    <br>
+      <h1><mat-icon>settings</mat-icon>setting</h1>
+      <mat-action-list>
+          <button mat-list-item  (click)="goToRoute('/user')"><mat-icon>person</mat-icon>user</button>
+          <!-- <button mat-list-item  (click)="goToRoute('/department')" *ngIf="checkAuth('LIST_DEPARTMENT')"><mat-icon>home</mat-icon>{{'department'|transloco}}</button> -->
+          <button mat-list-item  (click)="goToRoute('/category')"><mat-icon>fastfood</mat-icon>Category</button>
+          <button mat-list-item  (click)="goToRoute('/role')"><mat-icon>person</mat-icon>role</button>
+          <button mat-list-item  (click)="goToRoute('/ingredient')" ><mat-icon>  store_mall_directory</mat-icon>Ingresssdient</button>
+          <button mat-list-item  (click)="goToRoute('/menu')"><mat-icon>menu</mat-icon>Menu</button>
+          <button mat-list-item  (click)="goToRoute('/table')"><mat-icon>table</mat-icon>Table</button>
+        </mat-action-list>
+  </div>

@@ -1,0 +1,98 @@
+section {
+    background-image: url(https://images6.alphacoders.com/107/1075301.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+  }
+  .form-box {
+    background-color: rgba(249, 77, 232, 0.514);
+    position: relative;
+    width: 400px;
+    height: 450px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    
+  }
+  
+  /* .media  a{
+      margin-left: 10px;
+      
+      
+      
+  } */
+  
+  .media {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  .media i {
+    color: aqua;
+  }
+  
+  .header {
+    margin-top: 1rem;
+  }
+  
+  .form {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-bottom: 100px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.758rem;
+  }
+  
+  .icon {
+    width: 16px;
+  }
+  
+  .button input {
+    text-align: center;
+    border-radius: 10px;
+    width: 200px;
+    border: 10px;
+  }
+  .remember{
+    text-align: center;
+    color: rgb(255, 242, 255);
+  }
+  .forget{
+    text-align: center;
+    color: rgb(255, 242, 255);
+   
+  }
+  .p{
+    text-align: center;
+    color: rgb(255, 242, 255);
+  }
+  
+  .fa{
+    margin-right: 10px;
+  }
+  
+  h3{
+    color: rgb(255, 242, 255);
+  }
+  p{
+    color: rgb(255, 242, 255);
+  }
+  
+  
+  
+  /* .remember label{
+    margin-left: 10px;
+  } */
+  
+  .remember input{
+    margin-right: 10px;
+  }

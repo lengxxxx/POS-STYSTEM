@@ -1,0 +1,90 @@
+<section>
+    <div class="form-box">
+      <div class="header">
+        <h3>Please Sign in Account</h3>
+        <p style="text-align: center">Conect to your media Account</p>
+      </div>
+      <div class="form">
+        <form [formGroup]="signinForm" (ngSubmit)="signIn()">
+          <div class="media">
+            <a href="https://www.facebook.com/" target="_blank">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div class="input-box">
+            <i class="fa fa-user-o" aria-hidden="true"></i>
+            <input
+              required
+              formControlName="firstname"
+              type="text"
+              name="firstname"
+              placeholder="First Name"
+            />
+          </div>
+          <div class="input-box">
+            <i class="fa fa-user-o" aria-hidden="true"></i>
+            <input
+              formControlName="lastname"
+              type="text"
+              name="lastname"
+              placeholder="Last Name"
+            />
+          </div>
+          <div class="input-box">
+            <i class="fa fa-lock icon" aria-hidden="true"></i>
+            <input
+              formControlName="email"
+              type="email"
+              name="email"
+              placeholder="Email"
+            />
+          </div>
+          <div class="input-box">
+            <i class="fa fa-key" aria-hidden="true"></i>
+            <input
+              formControlName="password"
+              type="password"
+              name="password"
+              placeholder="Password"
+            />
+          </div>
+          <div class="input-box">
+            <i class="fa fa-key" aria-hidden="true"></i>
+            <input
+              formControlName="confirmpassword"
+              type="password"
+              name="confirmpassword"
+              placeholder="Confirm Password"
+            />
+          </div>
+          <div class="remember">
+            <input type="checkbox" class="icon1" />
+            <label for="">Remember me </label>
+          </div>
+          <div class="forget">
+            <a href="#" class="icon" style="color: aquamarine">Forget Password</a>
+          </div>
+          <p>
+            Already have Account
+            <a
+              style="color: rgb(255, 242, 255)"
+              routerLink="/login"
+              target="_blank"
+            >
+              Log In</a
+            >
+          </p>
+          <div class="button">
+            <button type="submit">Sign in</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  

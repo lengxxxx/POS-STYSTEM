@@ -1,0 +1,42 @@
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.675rem 0.75rem;
+  }
+  
+  .list-item.N {
+    cursor: pointer;
+  }
+  
+  .list-item.N:hover {
+    background-color: rgba(0, 128, 0, 0.25);
+  }
+  
+  .hr.Y span {
+    color: gray;
+  }
+  
+  .hr {
+    border-bottom: 0.5px solid #ccc;
+  }
+  
+  mat-icon {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+    margin-left: 0.5rem;
+  }
+  
+  .green {
+    color: darkgreen;
+  }
+  
+  .red {
+    color: crimson;
+  }
+  
+  .N {
+    background-color: rgba(0, 128, 0, 0.1);
+  }
+  

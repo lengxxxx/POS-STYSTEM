@@ -1,1 +1,95 @@
-/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Ang DaunKeo" !important;
+}
+
+.mat-raised-button.mat-primary {
+  background-color: green !important;
+}
+
+.fkh {
+  font-family: "Ang DaunKeo";
+}
+h1,h2,h3,h4,h5,h6,
+p,a,span,div,
+.mat-mdc-card-title, .mat-mdc-card-subtitle{
+    font-family: "Ang DaunKeo" !important;
+}
+
+.mat-form-field-wrapper{
+  padding-bottom: 0.34375em;
+}
+
+td{
+  font-family: "Ang DaunKeo" !important;
+}
+
+input{
+    font-family: "Ang DaunKeo" !important;
+
+}
+
+.mat-row:hover .mat-cell {
+  background-color: rgba(116, 133, 116, 0.307);
+}
+
+
+td , th {
+  white-space: nowrap;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+  max-width: 200px;
+  overflow: hidden;
+}
+
+.mat-sort-header-content{
+  white-space: nowrap;
+}
+
+::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important;}
+::ng-deep .mat-form-field-label-wrapper { top: -1.5em; }
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.1em) scale(.75);
+    width: 133.33333%;
+}
+
+.mat-success{
+  background-color: green !important;
+  color: #fff !important;
+}
+
+.mat-mdc-progress-spinner {
+  --mdc-circular-progress-active-indicator-color : green;
+}
+
+.mat-spinner-loading {
+  position: relative;
+  min-width: 200px;
+}
+
+.mat-spinner-loading mat-spinner {
+  width: auto !important;
+}
+
+.mat-spinner-loading h2 {
+  color: darkgreen;
+}
+
+
+.content{
+    padding: 1rem;
+}

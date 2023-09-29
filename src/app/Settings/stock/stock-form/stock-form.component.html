@@ -1,0 +1,51 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <mat-dialog-content>
+      <h2 mat-dialog-title *ngIf="!data.id">Add Stock</h2>
+      <h2 mat-dialog-title *ngIf="data.id">Edit Stock</h2>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>ingredient</mat-label>
+        <mat-select required [(ngModel)]="stock.ingredient" name="ingredient">
+          <mat-divider></mat-divider>
+          <mat-option
+            *ngFor="let i of ingredientTemplate.ingredient"
+            [value]="i.name"
+          >
+            {{ i.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="outline">
+        <mat-label>Value (kg)</mat-label>
+        <input
+          type="text"
+          matInput
+          name="value"
+          required
+          [(ngModel)]="stock.value"
+        />
+      </mat-form-field>
+      
+      <br />
+      <mat-form-field *ngIf="!!stock.id" appearance="outline">
+        <mat-label>Add Value(kg)</mat-label>
+        <input
+          type="text"
+          matInput
+          name="newValue"
+          required
+          [(ngModel)]="stock.newValue"
+        />
+      </mat-form-field>
+      
+    
+      <br />
+    </mat-dialog-content>
+  
+    <mat-dialog-actions>
+      <button mat-raised-button color="primary">save</button>
+      <a mat-raised-button color="warn" (click)="close()">close</a>
+    </mat-dialog-actions>
+  </form>
+  

@@ -1,0 +1,64 @@
+{
+  "table": [
+    {
+      "name": "pork ",
+      "value": 12345,
+      "id": 6
+    }
+  ],
+  "menu": [
+    {
+      "ingredient": "chicken",
+      "name": "abc",
+      "value": 10,
+      "id": 1,
+      "price": "5"
+    }
+  ],
+  "ingredient": [
+    {
+      "name": "beef",
+      "value": "12",
+      "id": 9
+    },
+    {
+      "name": "chicken",
+      "value": "12",
+      "id": 10
+    },
+    {
+      "name": "pork",
+      "value": "12",
+      "id": 11
+    },
+    {
+      "name": "duck",
+      "value": "10",
+      "id": 12
+    }
+  ],
+  "stock": [
+    {
+      "ingredient": "beef",
+      "value": 45,
+      "id": 1,
+      "newValue": 0,
+      "issum": true
+    },
+    {
+      "ingredient": "chicken",
+      "value": "12",
+      "id": 2
+    },
+    {
+      "ingredient": "pork",
+      "value": "35",
+      "id": 3
+    },
+    {
+      "ingredient": "duck",
+      "value": "45",
+      "id": 4
+    }
+  ]
+}

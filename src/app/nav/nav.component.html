@@ -1,0 +1,62 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+  
+      <mat-toolbar >
+        <img mat-card-image class="" src="/assets/logo/11111.png" alt="">
+        <!-- <img mat-card-image class="nav-logo-32" src="" alt="ardb-log-32x32"> -->
+        &nbsp; {{'WELCOME'}}
+      </mat-toolbar>
+      <mat-nav-list>
+        <mat-divider></mat-divider>
+        <a mat-list-item routerLink="/home" routerLinkActive="active">
+          <mat-icon>home</mat-icon>{{'home'}}
+        </a>
+        <a mat-list-item routerLink="/dashboard" routerLinkActive="active" >
+          <mat-icon>equalizer</mat-icon>{{'dashboard'}}</a>
+          
+          <a mat-list-item routerLink="/stock" routerLinkActive="active" >
+            <mat-icon>shopping_cart</mat-icon>stock</a>
+            
+        <mat-divider></mat-divider>
+       
+        <a mat-list-item routerLink="/setting" routerLinkActive="active" >
+          <mat-icon>settings</mat-icon>{{'setting'}}
+        </a>
+  
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content style="background-color: #cacaca75;">
+      <mat-progress-bar style="position: absolute; top: 0%;" mode="indeterminate"
+        *ngIf="navService.isLoading | async"></mat-progress-bar>
+  
+      <!-- <embed src="../../assets/img/banner22.svg" width="100%" style="margin-bottom: -7px;"> -->
+  
+      <mat-toolbar color="blue">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+  
+        <span class="example-spacer"></span>
+  
+        <!-- <app-language-selector></app-language-selector> -->
+        <!-- <a mat-icon-button class="example-icon fkh" aria-label="Example icon-button with share icon" title="{{'notification' | transloco}}"
+          (click)="openBottomSheet()">
+          <mat-icon
+            [matBadge]="notify.data"
+            matBadgeColor="warn">notifications</mat-icon>
+        </a> -->
+        <a routerLink="/profile" routerLinkActive="active" mat-icon-button class="example-icon fkh"
+          aria-label="Example icon-button with share icon" title="{{'user-info' }}">
+          <mat-icon>person</mat-icon>
+        </a>
+  
+        <a (click)="logout()" mat-icon-button class="example-icon fkh" aria-label="Example icon-button with share icon"
+          title="{{'logout' }}">
+          <mat-icon>exit_to_app</mat-icon>
+        </a>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

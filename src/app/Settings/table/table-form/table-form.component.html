@@ -1,0 +1,28 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+    <mat-dialog-content>
+        <!-- <h2 mat-dialog-title *ngIf="!remind.id" class="fkh">{{'add'|transloco}} {{'remind'|transloco}}</h2> -->
+        <h2 mat-dialog-title >Edit Table</h2>
+        <!-- <h2 mat-dialog-title *ngIf="remind.id" class="fkh">{{'edit'|transloco}} {{'remind'|transloco}}</h2> -->
+         
+        
+        <mat-form-field appearance="outline">
+              <mat-label >name</mat-label>
+              <input type="text"  matInput name="name" required [(ngModel)]="table.name">
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="outline">
+              <mat-label >Value</mat-label>
+              <input type="text"  matInput name="value" [(ngModel)]="table.value">
+          </mat-form-field>
+          <span class="error" *ngIf="isInteger">number-must-greater-than</span>
+          <br *ngIf="isInteger">
+          <span class="error" *ngIf="isInteger">must-not-decimal-number</span>
+      </mat-dialog-content>
+  
+      <mat-dialog-actions>
+          <button mat-raised-button color="primary" >save</button>
+          <a mat-raised-button color="warn"   (click)="close()">close</a>
+      </mat-dialog-actions>
+  </form>
+  

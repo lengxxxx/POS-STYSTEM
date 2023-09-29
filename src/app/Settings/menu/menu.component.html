@@ -1,0 +1,33 @@
+<section>
+
+    <mat-form-field class="btn-search" appearance="outline">
+      <mat-label >search</mat-label>
+      <input type="text" matInput (keyup)="applyFilter($event)">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field> &nbsp;
+
+    <button mat-raised-button color="primary"  (click)="newDailog()">New</button>
+
+  </section>
+
+  <div class="mat-elevation-z1">
+    
+    <!-- {{_table | json}} -->
+    
+    <table>
+      <tr>
+        <th>No</th>
+        <th>Menu name</th>
+        <th>Price</th>
+      </tr>
+      <tr *ngFor="let t of data">
+        <td>{{t.id}}</td>
+        <td>{{t.name}}</td>
+        <td *ngIf="t.price">{{t.price}}$</td>
+        <td *ngIf="!t.price">0 $</td>
+        <button  mat-button   (click) ="updateDailog(t)"><mat-icon>create</mat-icon></button>
+        <button mat-button  (click) ="deleteConfirm(t)"><mat-icon>delete_sweep</mat-icon></button>
+      </tr>
+    </table>
+
+  </div>
