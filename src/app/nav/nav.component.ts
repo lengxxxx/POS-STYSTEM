@@ -31,6 +31,11 @@ export class NavComponent {
   }
 
   logout() {
+    localStorage.setItem('isAuth', 'false');
+    setTimeout(() => {
+      // console.log('sleep');
+      this.router.navigate(['/', 'login']);
+    }, );
     const options = {
       title: '',
       message: 'logout-confirm',
@@ -39,7 +44,7 @@ export class NavComponent {
     };
 
     // this.confirmService.open(options);
-    // this.confirmService.confirmed().subscribe((confirmed) => {
+    // this.confirmService.confirmed().subscribe((confirmed: any) => {
     //   if (confirmed) {
     //     //click yes
     //     this.authenticationService.logout();

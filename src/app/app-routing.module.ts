@@ -12,6 +12,8 @@ import { StockComponent } from './Settings/stock/stock.component';
 import { CategoryComponent } from './Settings/category/category.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { DineInComponent } from './dine-in/dine-in.component';
+import { DineInFormComponent } from './dine-in/dine-in-form/dine-in-form.component';
 
 
 const routes: Routes = [
@@ -27,7 +29,11 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'ingredient', component: IngredientComponent},
   { path: 'category', component: CategoryComponent},
-  { path: 'signup', component: SignUpComponent}
+  { path: 'signup', component: SignUpComponent},
+  { path: 'dine-in', component: DineInComponent},
+  { path: 'dine-in/:id', component: DineInFormComponent},
+  
+  
   // otherwise redirect to home
   // { path: '**', redirectTo: '' },
 ];

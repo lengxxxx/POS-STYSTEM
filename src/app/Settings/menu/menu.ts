@@ -1,7 +1,16 @@
+import { category } from "../category/category"
+import { Ingredient } from "../ingredient/ingredient"
+
 export class Menu {
+  
     id!:number
-    name!: string
     value!:string
     description!:string
-    price!:number
+    name!:Text
+    category!: category[]
+    outStock!: number
+    price!: number
+    ingredient!: Ingredient[]
+    iconSrc!: string
+    
 }

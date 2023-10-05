@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { ingredient } from '../ingredient';
+import { Ingredient } from '../ingredient';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { IngredientService } from '../ingredient.service';
 import { NgForm } from '@angular/forms';
@@ -7,49 +7,38 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-ingredient-form',
   templateUrl: './ingredient-form.component.html',
-  styleUrls: ['./ingredient-form.component.css']
+  styleUrls: ['./ingredient-form.component.css'],
 })
 export class IngredientFormComponent {
-    
-  ingredient:ingredient = new ingredient();
-  
+  ingredient: Ingredient = new Ingredient();
 
   constructor(
     private dialogRef: MatDialogRef<IngredientFormComponent>,
-    private menuService: IngredientService  ,
-    @Inject(MAT_DIALOG_DATA) public data: ingredient
+    private menuService: IngredientService,
+    @Inject(MAT_DIALOG_DATA) public data: Ingredient
   ) {
     this.ingredient = data;
-    console.log("data====",data);
-    
+    console.log('data====', data);
   }
-  
+
   onSubmit(f: NgForm) {
-    console.log("submit--");
-    
+    console.log('submit--');
+
     if (!f.valid) {
-      
       return;
     }
     if (this.ingredient.id) {
-      this.menuService.put( this.ingredient).subscribe(
-        (data) => {
-          this.dialogRef.close();
-        }
-      );
+      this.menuService.put(this.ingredient).subscribe((data) => {
+        this.dialogRef.close();
+      });
     } else {
-      this.menuService.post(this.ingredient).subscribe(
-        (data) => {
-          this.dialogRef.close();
-        }
-      );
+      this.menuService.post(this.ingredient).subscribe((data) => {
+        this.dialogRef.close();
+      });
     }
   }
-  
 
   close() {
     this.dialogRef.close();
   }
-  
-  
 }

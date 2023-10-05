@@ -4,4 +4,5 @@ export class Table {
     name!: string
     value!:string
     description!:string
+    isBusy! : boolean
 }

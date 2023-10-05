@@ -6,10 +6,10 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit{
-  public signinForm!: FormGroup;
+export class LoginComponent implements OnInit {
+  public signupForm!: FormGroup;
   loginForm: any;
   constructor(
     private formBuilder: FormBuilder,
@@ -17,33 +17,35 @@ export class LoginComponent implements OnInit{
     private router: Router
   ) {}
   ngOnInit(): void {
-    this.signinForm = this.formBuilder.group({
+    this.signupForm = this.formBuilder.group({
       email: [''],
       password: [''],
     });
   }
   login() {
-    console.log('signin.email---', this.signinForm.value.email);
-    console.log('signin.pass---', this.signinForm.value.password);
-    this.http.get<any>('http://localhost:5000/signinUser').subscribe(
+    // this.router.navigate(['/', 'home']);
+    // console.log('signup.email---', this.signupForm.value.email);
+    // console.log('signup.pass---', this.signupForm.value.password);
+    this.http.get<any>('http://localhost:5000/user').subscribe(
       (res) => {
-        console.log("get-------");
-        
+        // console.log("get-------");
+
         const user = res.find((a: any) => {
-          
-          console.log("a==",a);
+          // console.log("a==",a);
           // console.log("a.password=--",a.password);
           // console.log("a.email=--",a.emial);
 
           return (
-            a.email === this.signinForm.value.email &&
-            a.password === this.signinForm.value.password
+            a.email === this.signupForm.value.email &&
+            a.password === this.signupForm.value.password
           );
         });
         if (user) {
           alert('login Success');
-          this.signinForm.reset();
-          this.router.navigate(['/', 'first']);
+          // this.signupForm.reset();
+          localStorage.setItem('isAuth', 'true');
+
+          this.router.navigate(['/', 'home']);
         } else {
           alert('user not found!!');
         }

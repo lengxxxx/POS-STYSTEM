@@ -1,4 +1,4 @@
-import { ingredient } from '../ingredient/ingredient';
+import { Ingredient } from '../ingredient/ingredient';
 
 export class stock {
   id!: number;
@@ -7,5 +7,5 @@ export class stock {
   newValue!: number | string;
   price!: number;
   issum!: boolean;
-  ingredient!: ingredient[];
+  ingredient!: Ingredient[];
 }

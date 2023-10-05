@@ -18,13 +18,20 @@
       <tr>
         <th>No</th>
         <th>Menu name</th>
+        <th>Category</th>
+        <th>Stock out</th>
         <th>Price</th>
+        <th>Ingredient</th>
+        
       </tr>
       <tr *ngFor="let t of data">
         <td>{{t.id}}</td>
         <td>{{t.name}}</td>
+        <td>{{t.category}}</td>
+        <td>{{t.outStock}}</td>
         <td *ngIf="t.price">{{t.price}}$</td>
         <td *ngIf="!t.price">0 $</td>
+        <td>{{t.ingredient}}</td>
         <button  mat-button   (click) ="updateDailog(t)"><mat-icon>create</mat-icon></button>
         <button mat-button  (click) ="deleteConfirm(t)"><mat-icon>delete_sweep</mat-icon></button>
       </tr>

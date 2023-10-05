@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 // import { ResponseModel } from 'src/app/_helpers/response-model';
 import { environment } from 'src/environments/environment';
-import { ingredient } from './ingredient';
+import { Ingredient } from './ingredient';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -22,24 +22,24 @@ export class IngredientService {
   private apiUrl = 'http://localhost:5000/ingredient';
   
   
-  gets(): Observable<ingredient[]> {
-    return this.http.get<ingredient[]>(this.apiUrl);
+  gets(): Observable<Ingredient[]> {
+    return this.http.get<Ingredient[]>(this.apiUrl);
   }
   
-  post(data: ingredient): Observable<ingredient[]> {
-    return this.http.post<ingredient[]>(this.apiUrl, data ,httpOptions);
+  post(data: Ingredient): Observable<Ingredient[]> {
+    return this.http.post<Ingredient[]>(this.apiUrl, data ,httpOptions);
   }
-  put(data: ingredient): Observable<ingredient[]> {
+  put(data: Ingredient): Observable<Ingredient[]> {
     const url = `${this.apiUrl}/${data.id}`
     // let url = 'http://localhost:5000/table/' + data.id ;
-    return this.http.put<ingredient[]>(url, data ,httpOptions);
+    return this.http.put<Ingredient[]>(url, data ,httpOptions);
   }
   
-  delete(data:ingredient): Observable<ingredient[]>{
+  delete(data:Ingredient): Observable<Ingredient[]>{
     const url = `${this.apiUrl}/${data.id}`
     
     // let url = 'http://localhost:5000/table/' + data.id ;
-    return this.http.delete<ingredient[]>(url ,httpOptions);
+    return this.http.delete<Ingredient[]>(url ,httpOptions);
   }
   
 }

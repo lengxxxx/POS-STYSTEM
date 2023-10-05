@@ -14,11 +14,50 @@
       </mat-form-field>
       <br />
       <mat-form-field appearance="outline">
+        <mat-label>ingredient</mat-label>
+        <mat-select required [(ngModel)]="menu.ingredient" name="ingredient">
+          <mat-divider></mat-divider>
+          <mat-option
+            *ngFor="let i of menuTemplate.ingredient"
+            [value]="i.name"
+          >
+            {{ i.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+      
+      <mat-form-field appearance="outline">
+        <mat-label>Category</mat-label>
+        <mat-select required [(ngModel)]="menu.category" name="category">
+          <mat-divider></mat-divider>
+          <mat-option
+            *ngFor="let i of menuTemplate.category"
+            [value]="i.menu"
+          >
+            {{ i.menu }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <br />
+      
+      <mat-form-field appearance="outline">
         <mat-label>Price</mat-label>
         <input type="text" matInput name="price" [(ngModel)]="menu.price" />
       </mat-form-field>
   
       <br />
+      
+      
+      <mat-form-field appearance="outline">
+        <mat-label>Stock Out</mat-label>
+        <input type="number" matInput name="outStock" [(ngModel)]="menu.outStock" />
+      </mat-form-field>
+  
+      <br />
+      
+      
     </mat-dialog-content>
   
     <mat-dialog-actions>

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 // import { ResponseModel } from 'src/app/_helpers/response-model';
 import { environment } from 'src/environments/environment';
 import { stock } from './stock';
-import { ingredient } from '../ingredient/ingredient';
+import { Ingredient } from '../ingredient/ingredient';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -34,9 +34,9 @@ export class StockService {
     return this.http.put<stock[]>(url, data, httpOptions);
   }
 
-  getTemplate(): Observable<ingredient[]> {
+  getTemplate(): Observable<Ingredient[]> {
     let apiUrl = 'http://localhost:5000/ingredient';
-    return this.http.get<ingredient[]>(apiUrl);
+    return this.http.get<Ingredient[]>(apiUrl);
   }
 
   delete(data: stock): Observable<stock[]> {

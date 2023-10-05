@@ -1,0 +1,39 @@
+<div class="content menu-wrapper ">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div fxFlex="20%" fxFlex.md="25%" fxFlex.sm="33%" fxFlex.xs="50%" *ngFor="let t of data">
+            <mat-card (click)="onPress(t)">
+                <img mat-card-image  src='assets/icon/{{t.iconSrc}}' alt="execution">
+                <mat-card-content>
+                    <hr>
+                    <h4>{{t.name}}</h4>
+                    <p>{{t.price}} $</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    
+    <mat-card class="recipe">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Unit</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+            <tr *ngFor="let t of order">
+                <td>{{t.name}}</td>
+                <td>{{t.units}}</td>
+                <td>$ {{t.price}}</td>
+                <td>$ {{t.units * t.price}}</td>
+            </tr>
+            
+            <br>
+            <tr>
+                <td colspan="1">Grand Total</td>
+                <td colspan="2">{{grandUnits}}</td>
+                <td >${{granTotal}}</td>
+                
+            </tr>
+        </table>
+    </mat-card>
+</div>

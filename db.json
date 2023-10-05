@@ -1,18 +1,109 @@
 {
   "table": [
     {
-      "name": "pork ",
-      "value": 12345,
-      "id": 6
+      "name": "First Floor",
+      "value": "T01",
+      "id": 7,
+      "isBusy": false
+    },
+    {
+      "name": "First Floor",
+      "value": "T02",
+      "id": 8,
+      "isBusy": true
+    },
+    {
+      "name": "First Floor",
+      "value": "T03",
+      "id": 9
+    },
+    {
+      "name": "First Floor",
+      "value": "T04",
+      "id": 10
+    },
+    {
+      "name": "First Floor",
+      "value": "T05",
+      "id": 11
+    },
+    {
+      "name": "Second Floor",
+      "value": "T01",
+      "id": 12
+    },
+    {
+      "name": "Second Floor",
+      "value": "T02",
+      "id": 13
+    },
+    {
+      "name": "Second Floor",
+      "value": "T03",
+      "id": 14
+    },
+    {
+      "name": "Second Floor",
+      "value": "T04",
+      "id": 15
+    },
+    {
+      "name": "Second Floor",
+      "value": "T05",
+      "id": 16
+    },
+    {
+      "name": "Third Floor",
+      "value": "T01",
+      "id": 17
+    },
+    {
+      "name": "Third Floor",
+      "value": "T02",
+      "id": 18
+    },
+    {
+      "name": "Third Floor",
+      "value": "T03",
+      "id": 19
     }
   ],
   "menu": [
     {
-      "ingredient": "chicken",
-      "name": "abc",
-      "value": 10,
+      "name": "Hamburger ",
+      "price": "5",
+      "outStock": 0.2,
       "id": 1,
-      "price": "5"
+      "ingredient": "beef",
+      "category": "Fast-Food",
+      "iconSrc": "burger.png"
+    },
+    {
+      "name": "pizza",
+      "price": "10",
+      "outStock": 0.5,
+      "id": 2,
+      "ingredient": "pork",
+      "category": "Fast-Food",
+      "iconSrc": "pizza.png"
+    },
+    {
+      "price": "2",
+      "outStock": 0.2,
+      "name": "sandwich ",
+      "id": 3,
+      "ingredient": "beef",
+      "category": "Fast-Food",
+      "iconSrc": "taco.png"
+    },
+    {
+      "name": "soup",
+      "ingredient": "duck",
+      "category": "Fast-Food",
+      "price": "5",
+      "outStock": 0.5,
+      "id": 18,
+      "iconSrc": "ramen.png"
     }
   ],
   "ingredient": [
@@ -40,7 +131,7 @@
   "stock": [
     {
       "ingredient": "beef",
-      "value": 45,
+      "value": 17,
       "id": 1,
       "newValue": 0,
       "issum": true
@@ -58,6 +149,68 @@
     {
       "ingredient": "duck",
       "value": "45",
+      "id": 4
+    }
+  ],
+  "user": [
+    {
+      "firstname": "hello",
+      "lastname": "hi",
+      "email": "123@gmail.com",
+      "password": "0000",
+      "confirmpassword": "0000",
+      "id": 3
+    },
+    {
+      "firstname": "chhour",
+      "lastname": "chhayleng",
+      "email": "chhourchhayleng@gmail.com",
+      "password": "1234",
+      "confirmpassword": "1234",
+      "id": 4
+    },
+    {
+      "firstname": "leng",
+      "lastname": "123",
+      "email": "leng@gmail.com",
+      "password": "123",
+      "confirmpassword": "123",
+      "id": 5
+    }
+  ],
+  "category": [
+    {
+      "menu": "Fast-Food",
+      "id": 1
+    },
+    {
+      "menu": "drink",
+      "id": 2
+    }
+  ],
+  "recipe": [
+    {
+      "name": "soup",
+      "price": "5",
+      "units": 2,
+      "id": 1
+    },
+    {
+      "name": "pizza",
+      "price": "10",
+      "units": 2,
+      "id": 2
+    },
+    {
+      "name": "Hamburger ",
+      "price": "5",
+      "units": 4,
+      "id": 3
+    },
+    {
+      "name": "sandwich ",
+      "price": "2",
+      "units": 4,
       "id": 4
     }
   ]

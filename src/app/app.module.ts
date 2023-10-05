@@ -46,6 +46,8 @@ import { MatInputModule } from '@angular/material/input'
 import { MatSelectModule } from '@angular/material/select';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { DineInComponent } from './dine-in/dine-in.component';
+import { DineInFormComponent } from './dine-in/dine-in-form/dine-in-form.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +72,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     ConfirmComponent,
     LoginComponent,
     SignUpComponent,
+    DineInComponent,
+    DineInFormComponent,
   ],
   imports: [
     LayoutModule,

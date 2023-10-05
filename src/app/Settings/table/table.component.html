@@ -20,13 +20,13 @@
   <table>
     <tr>
       <th>No</th>
+      <th>Floor</th>
       <th>Table name</th>
-      <th>Value</th>
     </tr>
     <tr *ngFor="let t of table">
       <td>{{ t.id }}</td>
       <td>{{ t.name }}</td>
-      <td>{{ t.value }}g</td>
+      <td>{{ t.value }}</td>
       <button mat-button (click)="updateDailog(t)">
         <mat-icon>create</mat-icon>
       </button>

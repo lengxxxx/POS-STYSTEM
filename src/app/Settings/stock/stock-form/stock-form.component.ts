@@ -22,14 +22,8 @@ export class StockFormComponent {
   ) {
     this.stock = data;
     this.getTemplate();
-
-    console.log('this.stock:::', this.stock);
-    
     let d = this.subValue(toNumber(this.stock.value), 12);
-
     let b = this.sumValue(toNumber(this.stock.value), 11);
-
-    console.log('value :::', b);
   }
 
   sumValue(old: number | null, newValue: number) {
@@ -54,7 +48,6 @@ export class StockFormComponent {
         'this.ingredientTemplate.ingredient::',
         this.ingredientTemplate.ingredient
       );
-
       // this.dialogRef.close();
     });
   }

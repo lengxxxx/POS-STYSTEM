@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 // import { ResponseModel } from 'src/app/_helpers/response-model';
 import { environment } from 'src/environments/environment';
 import { Menu} from './menu';
+import { stock } from '../stock/stock';
+import { Ingredient } from '../ingredient/ingredient';
 
 
 const httpOptions = {
@@ -16,6 +18,10 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class MenuService {
+  getTemplate() {
+    let apiUrl = 'http://localhost:5000/ingredient';
+    return this.http.get<Ingredient[]>(apiUrl);
+  }
 
   constructor(private http:HttpClient) { }
 
@@ -24,7 +30,6 @@ export class MenuService {
   
   
   gets(): Observable<Menu[]> {
-    
     return this.http.get<Menu[]>(this.apiUrl, httpOptions);
   }
   

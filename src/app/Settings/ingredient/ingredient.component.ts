@@ -5,13 +5,8 @@ import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ConfirmService } from 'src/app/confirm/confirm.service';
 import { IngredientService } from './ingredient.service';
-// import { PaggingModel } from 'src/app/_helpers/response-model';
 import { IngredientFormComponent } from './ingredient-form/ingredient-form.component';
-// import { AuthenticationService } from 'src/app/authentication/authentication.service';
-import { environment } from 'src/environments/environment';
-// import { FollowUpStatus } from '../follow-up-status/follow-up-status';
-// import { FollowUpStatusFormComponent } from '../follow-up-status/follow-up-status-form/follow-up-status-form.component';
-import { ingredient } from './ingredient';
+import { Ingredient } from './ingredient';
 import { Data } from '@angular/router';
 
 @Component({
@@ -20,29 +15,20 @@ import { Data } from '@angular/router';
   styleUrls: ['./ingredient.component.css', '../../../styles/styles.component.css']
 })
 export class IngredientComponent  {
-  
-  data:  ingredient[] = [];
- 
-  
- 
- 
+  data:  Ingredient[] = [];
   
   constructor(
     private ingredientService: IngredientService,
     private confirmService: ConfirmService,
-    
     private dialog: MatDialog,
-    // private authenticationService: AuthenticationService
   ) { this.getAll()
   }
-
   
   newDailog() {
     const dialogConfig = new MatDialogConfig();
-
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.data = new ingredient();
+    dialogConfig.data = new Ingredient();
 
     this.dialog
       .open(IngredientFormComponent, dialogConfig)
@@ -62,8 +48,7 @@ export class IngredientComponent  {
     // this.dataSource.filter = filterValue.trim().toLowerCase();
   }
   
-  
-  updateDailog(data: ingredient) {
+  updateDailog(data: Ingredient) {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;
@@ -78,17 +63,14 @@ export class IngredientComponent  {
         this.getAll();
       });
   }
-
-  deleteConfirm(data: ingredient) {
+  deleteConfirm(data: Ingredient) {
     const options = {
       title:('Ingredient'),
       message: `${('delete-confirmation')} ${data.name}?`,
       cancelText:('cancel'),
       confirmText: ('yes'),
     };
-
     this.confirmService.open(options);
-
     this.confirmService.confirmed().subscribe((confirmed) => {
       if (confirmed) {
         this.ingredientService. delete(data).subscribe(

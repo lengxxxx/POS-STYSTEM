@@ -9,14 +9,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-up.component.css'],
 })
 export class SignUpComponent implements OnInit {
-  public signinForm!: FormGroup;
+  public signupForm!: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private router: Router
   ) {}
   ngOnInit(): void {
-    this.signinForm = this.formBuilder.group({
+    this.signupForm = this.formBuilder.group({
       firstname: [''],
       lastname: [''],
       email: [''],
@@ -25,34 +25,37 @@ export class SignUpComponent implements OnInit {
     });
   }
   signIn() {
-    console.log('this.signinForm.value :::', this.signinForm.value);
+    
+    
+    
+    // console.log('this.signinForm.value :::', this.signinForm.value);
 
-    if (this.signinForm.value.firstname == '') {
+    if (this.signupForm.value.firstname == '') {
       alert('please insert  first ');
       return;
     }
     // console.log('signinForm:::', this.signinForm.value);
 
-    console.log(
-      'this.signinForm.value.password====',
-      this.signinForm.value.password
-    );
-    console.log(
-      '!this.signinForm.value.confirmpassword :::',
-      this.signinForm.value.confirmpassword
-    );
+    // console.log(
+    //   'this.signinForm.value.password====',
+    //   this.signinForm.value.password
+    // );
+    // console.log(
+    //   '!this.signinForm.value.confirmpassword :::',
+    //   this.signinForm.value.confirmpassword
+    // );
 
     if (
-      this.signinForm.value.password !== this.signinForm.value.confirmpassword
+      this.signupForm.value.password !== this.signupForm.value.confirmpassword
     ) {
       alert('password not match ');
     } else {
       this.http
-        .post<any>('http://localhost:5000/signinUser', this.signinForm.value)
+        .post<any>('http://localhost:5000/user', this.signupForm.value)
         .subscribe(
           (_res) => {
             alert('Sign In Seccessfull');
-            this.signinForm.reset();
+            this.signupForm.reset();
             this.router.navigate(['/', 'login']);
           },
           (_err) => {

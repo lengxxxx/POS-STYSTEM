@@ -5,7 +5,7 @@
         <p style="text-align: center">Conect to your media Account</p>
       </div>
       <div class="form">
-        <form [formGroup]="signinForm" (ngSubmit)="signIn()">
+        <form [formGroup]="signupForm" (ngSubmit)="signIn()">
           <div class="media">
             <a href="https://www.facebook.com/" target="_blank">
               <i class="fa fa-facebook" aria-hidden="true"></i>
@@ -75,13 +75,13 @@
             <a
               style="color: rgb(255, 242, 255)"
               routerLink="/login"
-              target="_blank"
-            >
+              >
+              <!-- target="_blank" -->
               Log In</a
             >
           </p>
           <div class="button">
-            <button type="submit">Sign in</button>
+            <button type="submit">Sign up</button>
           </div>
         </form>
       </div>

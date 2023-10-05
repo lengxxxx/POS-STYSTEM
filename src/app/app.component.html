@@ -1,3 +1,4 @@
-<app-nav></app-nav>
-<router-outlet>
+<!-- <app-nav *ngIf="isAuth"></app-nav> -->
+<app-nav *ngIf="hasRoute('/login') && hasRoute('/signup') "></app-nav>
+<router-outlet *ngIf="!isAuth">
 </router-outlet>

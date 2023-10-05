@@ -9,7 +9,7 @@
       <div class="form">
         <!-- <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate> -->
         <!-- <form [(ngSubmit)="onSubmit()"]> -->
-        <form [formGroup]="signinForm" (ngSubmit)="login()">
+        <form [formGroup]="signupForm" (ngSubmit)="login()">
        
           <div class="media">
             <a href="https://www.facebook.com/" target="_blank">
@@ -52,12 +52,12 @@
             >
           </div>
           <p class="p">
-            Click to Sign In
+            Click to
+            <!-- target="_blank" -->
             <a
               style="color: rgb(255, 242, 255)"
-              routerLink="/signin"
-              target="_blank"
-              >Sign In</a
+              routerLink="/signup"
+              >Sign up</a
             >
           </p>
           <div class="button">

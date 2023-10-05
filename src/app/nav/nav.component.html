@@ -15,10 +15,15 @@
         <a mat-list-item routerLink="/dashboard" routerLinkActive="active" >
           <mat-icon>equalizer</mat-icon>{{'dashboard'}}</a>
           
+          <a mat-list-item routerLink="/dine-in" routerLinkActive="active" >
+            <mat-icon>airline_seat_recline_normal</mat-icon>{{'Dine In'}}
+          </a>
+          
           <a mat-list-item routerLink="/stock" routerLinkActive="active" >
             <mat-icon>shopping_cart</mat-icon>stock</a>
             
         <mat-divider></mat-divider>
+        
        
         <a mat-list-item routerLink="/setting" routerLinkActive="active" >
           <mat-icon>settings</mat-icon>{{'setting'}}
@@ -36,16 +41,11 @@
         <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
-  
         <span class="example-spacer"></span>
+        
+        
   
-        <!-- <app-language-selector></app-language-selector> -->
-        <!-- <a mat-icon-button class="example-icon fkh" aria-label="Example icon-button with share icon" title="{{'notification' | transloco}}"
-          (click)="openBottomSheet()">
-          <mat-icon
-            [matBadge]="notify.data"
-            matBadgeColor="warn">notifications</mat-icon>
-        </a> -->
+       
         <a routerLink="/profile" routerLinkActive="active" mat-icon-button class="example-icon fkh"
           aria-label="Example icon-button with share icon" title="{{'user-info' }}">
           <mat-icon>person</mat-icon>
