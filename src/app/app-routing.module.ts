@@ -31,7 +31,7 @@ const routes: Routes = [
   { path: 'category', component: CategoryComponent},
   { path: 'signup', component: SignUpComponent},
   { path: 'dine-in', component: DineInComponent},
-  { path: 'dine-in/:id', component: DineInFormComponent},
+  { path: 'dine-in/:tableId', component: DineInFormComponent},
   
   
   // otherwise redirect to home

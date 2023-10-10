@@ -41,7 +41,7 @@ export class TotalService {
     }
     return this.http.put<Total[]>(url, totalPrice, httpOptions);
   }
-  
+   
   // postTable(data: Table): Observable<Table[]> {
   //   return this.http.post<Table[]>(this.apiUrl, data ,httpOptions);
   // }

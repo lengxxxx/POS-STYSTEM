@@ -17,6 +17,10 @@
 
 .recipe {
     padding: 10px;
+    display:flex ;
+    align-items: flex-end;
+    flex-direction: column;
+justify-content: space-between;
     
 }
 
@@ -32,3 +36,5 @@ table, td, th {
     width: 100%;
     border-collapse: collapse;
   }
+  
+  

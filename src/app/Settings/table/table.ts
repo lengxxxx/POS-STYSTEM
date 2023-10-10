@@ -1,8 +1,9 @@
 
 export class Table {
-    id!:number
-    name!: string
-    value!:string
-    description!:string
+    id!:number | null | string
+    name?: string
+    value?:string
+    description?:string
     isBusy! : boolean
+    recipeId! : number
 }

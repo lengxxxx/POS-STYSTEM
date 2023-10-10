@@ -3,6 +3,7 @@
         <div fxFlex="20%" fxFlex.md="25%" fxFlex.sm="33%" fxFlex.xs="50%" *ngFor="let t of data">
             <mat-card (click)="onPress(t)">
                 <img mat-card-image  src='assets/icon/{{t.iconSrc}}' alt="execution">
+                
                 <mat-card-content>
                     <hr>
                     <h4>{{t.name}}</h4>
@@ -13,6 +14,7 @@
     </div>
     
     <mat-card class="recipe">
+      
         <table>
             <tr>
                 <th>Name</th>
@@ -35,5 +37,9 @@
                 
             </tr>
         </table>
+        <div class="button-row">
+            <button   mat-button color="primary" (click)="onCheckOut()" routerLink="/dine-in">Check out</button>
+          </div>
+
     </mat-card>
 </div>

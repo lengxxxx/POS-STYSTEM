@@ -25,6 +25,7 @@ export class MenuFormComponent {
   ) {
     this.menu = data;
     this.getTemplate();
+    
   }
 
   getTemplate() {
