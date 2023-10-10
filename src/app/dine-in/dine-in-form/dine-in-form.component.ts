@@ -93,32 +93,29 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
   }
 
   onCheckOut() {
-    
+
     console.log("resrx::");
     this._tableId = this.route.snapshot.paramMap.get('tableId');
-          const data: Table = {
-            "isBusy": false,
-            "id": this._tableId,
-            "recipeId": 0,
-          }
-          this.tableService.putTable(data).subscribe((res => {
-            console.log("TABLE res ::", res);
-          }))
-        
+    const data: Table = {
+      "isBusy": false,
+      "id": this._tableId,
+      "recipeId": 0,
+    }
+    this.tableService.putTable(data).subscribe((res => {
+      console.log("TABLE res ::", res);
+    }))
+
     if (this.data_table != undefined)
       this.tableService.putTable(this.data_table).subscribe((res) => {
         console.log("res--", res);
       })
   };
 
-  getRecipe(id: number) {
+  getRecipe(id: number | undefined) {
     if (!!id) {
       this.recipeService.gets(id).subscribe((res) => {
-         console.log("res:::", res);
-         
-        
+        console.log("res:::", res);
         this.order = (res as ResponseModel).order;
-        this.getTotal();
         this.getUnits();
       });
     } else {
@@ -130,7 +127,7 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
       }
       this.recipeService.post(order).subscribe((res) => {
         this._tableId = this.route.snapshot.paramMap.get('tableId');
-        if ( res.id != undefined) {
+        if (res.id != undefined) {
           const data: Table = {
             "isBusy": true,
             "id": this._tableId,
@@ -138,10 +135,12 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
           }
           this.tableService.putTable(data).subscribe((res => {
             console.log("TABLE res ::", res);
+            
           }))
         }
       })
     }
+    this.getTotal();
 
   }
 
@@ -156,27 +155,35 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
   }
 
   onPress(order: any) {
-    if (this.recipeId === undefined) {
+    if (this.recipeId !== undefined) {
       const array: any = this.order.map(o => o.name);
       let isExits: boolean = false;
-      const conditon = (e: string) => e === order.name ? true : false;
-      const _arr = this.order.map((x: any) => {
-        if (x.name == order.name) {
-          this.recipeService.put(x, order).subscribe((res => {
-            // this.getRecipe(this.recipeId);
-          }))
+      const conditon = (e: string) => e == order.name ? true : false;
+      const _arr = this.order.map((recipe: any, index: number) => {
+        if (recipe.name == order.name) {
+          this.order[index].units += 1
         }
       }
       )
       isExits = (array.some(conditon));
-      if (isExits) {
-
-      } else {
-        this.recipeService.post(order).subscribe((res => {
-          // this.getRecipe(this.recipeId);
-        }))
+      if (!isExits) {
+        const newRecipe: Recipe = {
+          name: order.name,
+          units: 1,
+          id: order.id,
+          price: order.price,
+          isHave: true
+        }
+        this.order.push(newRecipe)
+        
       }
+        console.log("recipeId::",this.recipeId);
+        
+        this.recipeService.put(this.recipeId,this.order).subscribe((res => {
+          this.getRecipe(this.recipeId);
+          
+        }))
+  
     }
-
   }
 }

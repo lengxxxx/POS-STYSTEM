@@ -1,6 +1,6 @@
 export class ResponseModel {
     id!:number
-    data!: []
+    // data!: []
     order!: []
 }
     
