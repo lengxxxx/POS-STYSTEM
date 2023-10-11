@@ -2,7 +2,7 @@
     <div fxLayout="row wrap" fxLayoutGap="16px grid">
 
         <div fxFlex="20%" fxFlex.md="25%" fxFlex.sm="33%" fxFlex.xs="50%" *ngFor="let t of table">
-            <mat-card routerLink="/dine-in/{{t.id}}">
+            <mat-card (click)="goToform(t)">
                 <img mat-card-image *ngIf="t.isBusy" src="../../assets/img/dinning-table-color.png" alt="execution">
                 <img mat-card-image *ngIf="!t.isBusy" src="../../assets/img/dinning-table.png" alt="execution">
                 <mat-card-content>

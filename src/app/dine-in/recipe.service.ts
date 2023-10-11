@@ -21,7 +21,9 @@ export class RecipeService {
   uri = "/user/param/v1";
   private apiUrl = 'http://localhost:5000/recipe';
 
+  
   gets(id: number): Observable<ResponseModel> {
+    
     const url = `${this.apiUrl}/${id}`
     return this.http.get<ResponseModel>(url);
   }
@@ -29,6 +31,7 @@ export class RecipeService {
   post(data: Recipe): Observable<Recipe> {
     const newOder = {
       order: []
+      
     }
     return this.http.post<Recipe>(this.apiUrl, newOder, httpOptions);
   }

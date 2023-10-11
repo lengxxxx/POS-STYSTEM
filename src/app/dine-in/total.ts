@@ -10,5 +10,7 @@ export class Total {
 export class recipe{
     id!: number
     order!: Total
+    gradTotal!: number
+    grandUnits!: number
     
 }

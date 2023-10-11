@@ -48,6 +48,7 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { DineInComponent } from './dine-in/dine-in.component';
 import { DineInFormComponent } from './dine-in/dine-in-form/dine-in-form.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { DineInFormComponent } from './dine-in/dine-in-form/dine-in-form.compone
     SignUpComponent,
     DineInComponent,
     DineInFormComponent,
+    DashboardComponent,
   ],
   imports: [
     LayoutModule,

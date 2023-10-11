@@ -3,6 +3,7 @@ import { TableService } from '../Settings/table/table.service';
 import { ConfirmService } from '../confirm/confirm.service';
 import { MatDialog } from '@angular/material/dialog';
 import { Table } from '../Settings/table/table';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dine-in',
@@ -15,6 +16,7 @@ export class DineInComponent {
 
   constructor(
     private tableService: TableService,
+    private router: Router
   ) {
     this.getAll();
   }
@@ -25,5 +27,7 @@ export class DineInComponent {
     });
   }
   
-  
+  goToform(t:Table){
+    this.router.navigate([`/dine-in/${t.id}`]);
+  }
 }

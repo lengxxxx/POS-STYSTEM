@@ -32,6 +32,8 @@ export class TableService {
     return this.http.post<Table[]>(this.apiUrl, data ,httpOptions);
   }
   putTable(data: Table ): Observable<Table> {
+    console.log("putTable::::",data);
+    
     const url = `${this.apiUrl}/${data.id}`
     return this.http.put<Table>(url, data ,httpOptions);
   }

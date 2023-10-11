@@ -35,7 +35,7 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
   grandUnits: number = 0
   recipeId?: number
   _tableId: string | number | null = 0;
-  data_table?: Table;
+  data_table!: Table;
 
   constructor(
     private menuService: MenuService,
@@ -71,6 +71,7 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
 
   getRecipeId() {
     this.tableService.getTableById(this._tableId).subscribe((res) => {
+      this.data_table = res
       this.recipeId = res.recipeId;
       this.getRecipe(res.recipeId);
     })
@@ -92,31 +93,35 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
       });
   }
 
-  onCheckOut() {
-
-    console.log("resrx::");
+  onCheckOut( ) {
+    
     this._tableId = this.route.snapshot.paramMap.get('tableId');
-    const data: Table = {
+    
+    console.log("data_table::", this.data_table);
+    
+    const newData: Table = {
       "isBusy": false,
       "id": this._tableId,
       "recipeId": 0,
+      "value": this.data_table.value,
+      "name": this.data_table.name,
+      
     }
-    this.tableService.putTable(data).subscribe((res => {
-      console.log("TABLE res ::", res);
-    }))
 
-    if (this.data_table != undefined)
-      this.tableService.putTable(this.data_table).subscribe((res) => {
-        console.log("res--", res);
-      })
+    this.tableService.putTable(newData).subscribe((res => {
+      this.router.navigate([`/dine-in`]);
+    }))
   };
 
   getRecipe(id: number | undefined) {
     if (!!id) {
+      
       this.recipeService.gets(id).subscribe((res) => {
-        console.log("res:::", res);
         this.order = (res as ResponseModel).order;
         this.getUnits();
+        this.getTotal();
+       
+        
       });
     } else {
       let order: Recipe = {
@@ -132,21 +137,22 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
             "isBusy": true,
             "id": this._tableId,
             "recipeId": res.id,
+            "value": this.data_table.value,
+            "name": this.data_table.name,
           }
           this.tableService.putTable(data).subscribe((res => {
-            console.log("TABLE res ::", res);
             
           }))
         }
       })
     }
-    this.getTotal();
-
   }
 
   getTotal() {
     const array_price: any = this.order.map(p => p.price * p.units)
     this.granTotal = array_price.reduce((a: number, b: number) => a + b, 0)
+    console.log("this.granTotal::",this.granTotal);
+    
   }
 
   getUnits() {
@@ -162,6 +168,7 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
       const _arr = this.order.map((recipe: any, index: number) => {
         if (recipe.name == order.name) {
           this.order[index].units += 1
+          
         }
       }
       )
@@ -175,15 +182,16 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
           isHave: true
         }
         this.order.push(newRecipe)
+        // this.getTotal()
         
+
       }
-        console.log("recipeId::",this.recipeId);
-        
-        this.recipeService.put(this.recipeId,this.order).subscribe((res => {
-          this.getRecipe(this.recipeId);
-          
-        }))
-  
+
+      this.recipeService.put(this.recipeId, this.order).subscribe((res => {
+        this.getRecipe(this.recipeId);
+
+      }))
+
     }
   }
 }
