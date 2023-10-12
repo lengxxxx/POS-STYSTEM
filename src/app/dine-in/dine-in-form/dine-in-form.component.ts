@@ -36,7 +36,7 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
   recipeId?: number
   _tableId: string | number | null = 0;
   data_table!: Table;
-
+  myDate = new Date();
   constructor(
     private menuService: MenuService,
     private breakpointObserver: BreakpointObserver,
@@ -105,6 +105,8 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
       "recipeId": 0,
       "value": this.data_table.value,
       "name": this.data_table.name,
+      "grandTotal": this.data_table.grandTotal,
+      "grandUnits": this.data_table.grandUnits,
       
     }
 
@@ -120,7 +122,6 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
         this.order = (res as ResponseModel).order;
         this.getUnits();
         this.getTotal();
-       
         
       });
     } else {
@@ -129,6 +130,7 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
         "price": 0,
         "isHave": false,
         "units": 0,
+        "date": this.myDate,
       }
       this.recipeService.post(order).subscribe((res) => {
         this._tableId = this.route.snapshot.paramMap.get('tableId');
@@ -179,10 +181,13 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
           units: 1,
           id: order.id,
           price: order.price,
-          isHave: true
+          isHave: true,
+          date:this.myDate,
+          granTotal: this.granTotal,
+          grandUnits: this.grandUnits,
         }
         this.order.push(newRecipe)
-        // this.getTotal()
+        this.getTotal()
         
 
       }

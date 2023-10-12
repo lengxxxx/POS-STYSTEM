@@ -6,5 +6,7 @@ export class Recipe {
     id?: number
     totalPrice?: number
     granTotal?: number
+    grandUnits?: number
+    date!: Date
     
 }

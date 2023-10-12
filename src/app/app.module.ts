@@ -48,7 +48,7 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { DineInComponent } from './dine-in/dine-in.component';
 import { DineInFormComponent } from './dine-in/dine-in-form/dine-in-form.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { Chart } from 'chart.js/dist';
 
 @NgModule({
   declarations: [
@@ -75,7 +75,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SignUpComponent,
     DineInComponent,
     DineInFormComponent,
-    DashboardComponent,
+  
   ],
   imports: [
     LayoutModule,
@@ -107,6 +107,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatInputModule,
     MatSelectModule,
     HttpClientModule,
+   
   ],
   providers: [
     // { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

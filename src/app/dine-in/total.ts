@@ -4,7 +4,10 @@ export class Total {
     drink!: string
     units!: number
     id!: number
-    total!:number;
+    total!:number
+    grandTotal!:number
+    grandUnits!:number
+    date!: Date
 }
 
 export class recipe{
@@ -12,5 +15,5 @@ export class recipe{
     order!: Total
     gradTotal!: number
     grandUnits!: number
-    
+    date!: Date
 }

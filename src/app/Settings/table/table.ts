@@ -6,4 +6,6 @@ export class Table {
     description?:string
     isBusy! : boolean
     recipeId! : number
+    grandTotal?: number
+    grandUnits?:number
 }
