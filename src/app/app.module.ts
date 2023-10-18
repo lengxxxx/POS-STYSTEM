@@ -48,7 +48,8 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { DineInComponent } from './dine-in/dine-in.component';
 import { DineInFormComponent } from './dine-in/dine-in-form/dine-in-form.component';
-import { Chart } from 'chart.js/dist';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -75,12 +76,14 @@ import { Chart } from 'chart.js/dist';
     SignUpComponent,
     DineInComponent,
     DineInFormComponent,
+    DashboardComponent,
   
   ],
   imports: [
     LayoutModule,
     FlexLayoutModule,
     BrowserModule,
+    NgChartsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatProgressBarModule,
@@ -96,7 +99,6 @@ import { Chart } from 'chart.js/dist';
     MatPaginatorModule,
     MatCardModule,
     MatNativeDateModule,
-    MatIconModule,
     MatListModule,
     MatBottomSheetModule,
     FormsModule, 

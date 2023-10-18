@@ -28,10 +28,9 @@ export class RecipeService {
     return this.http.get<ResponseModel>(url);
   }
 
-  post(data: Recipe): Observable<Recipe> {
+  post(): Observable<Recipe> {
     const newOder = {
       order: []
-      
     }
     return this.http.post<Recipe>(this.apiUrl, newOder, httpOptions);
   }
@@ -45,10 +44,8 @@ export class RecipeService {
     }
     return this.http.put<Recipe[]>(url, newOder, httpOptions);
   }
-  // deleteTable(data:Table): Observable<Table[]>{
-  //   const url = `${this.apiUrl}/${data.id}`
-
-  //   // let url = 'http://localhost:5000/table/' + data.id ;
-  //   return this.http.delete<Table[]>(url ,httpOptions);
-  // }
+  delete(id: number): Observable<Recipe[]>{
+    const url = `${this.apiUrl}/${id}`
+    return this.http.delete<Recipe[]>(url ,httpOptions);
+  }
 }

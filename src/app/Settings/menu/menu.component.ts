@@ -42,8 +42,10 @@ export class MenuComponent {
         this.getAll();
       });
   }
-  getAll() {
+  getAll()  {
     this.menuService.gets().subscribe((res) => {
+      console.log("res::",res.length);
+      
       this.data = res;
     });
   }

@@ -4,6 +4,7 @@ import { ConfirmService } from '../confirm/confirm.service';
 import { MatDialog } from '@angular/material/dialog';
 import { Table } from '../Settings/table/table';
 import { Router } from '@angular/router';
+import { RecipeService } from './recipe.service';
 
 @Component({
   selector: 'app-dine-in',
@@ -16,6 +17,7 @@ export class DineInComponent {
 
   constructor(
     private tableService: TableService,
+    private recipeService:RecipeService,
     private router: Router
   ) {
     this.getAll();
@@ -28,6 +30,40 @@ export class DineInComponent {
   }
   
   goToform(t:Table){
-    this.router.navigate([`/dine-in/${t.id}`]);
+    this.tableService.getTableById(t.id).subscribe((res) => {
+      console.log("res::",res);
+      if(res.isBusy == true ){
+        this.router.navigate([`/dine-in/${t.id}`]);
+      }
+      if(res.isBusy == false){
+        this.recipeService.post().subscribe((res) => {
+          if (res.id != undefined) {
+            const data: Table = {
+              "isBusy": true,
+              "id": t.id,
+              "recipeId": res.id,
+              "value": t.value,
+              "name": t.name,
+            }
+            this.tableService.putTable(data).subscribe((res => {
+              this.getAll();
+        this.router.navigate([`/dine-in/${t.id}`]);
+              
+            }))
+          }
+          // this.getRecipe(this.recipeId);
+        })
+      }
+     
+    })
+    
   }
+  // getRecipe(id: number) {
+  //     if(!!id){
+        
+  //     }
+  // }
+  // recipeId(recipeId: any) {
+  //   throw new Error('Method not implemented.');
+  // }
 }

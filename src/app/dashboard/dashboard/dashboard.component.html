@@ -1,0 +1,78 @@
+<main class="main-container">
+    <div class="main-title">
+        <h2>Dashboard</h2>
+    </div>
+
+
+    <div class="main-cards">
+        <div class="card">
+            <div class="card-inner">
+                <h3>Product</h3>
+                <mat-icon class="material-icons-outlined">inventory_2</mat-icon>
+            </div>
+            <h1>{{menuCount}}</h1>
+        </div>
+
+
+        <div class="card">
+            <div class="card-inner">
+                <h3>Categories</h3>
+                <mat-icon class="material-icons-outlined"> production_quantity_limits </mat-icon>
+
+            </div>
+            <h1>{{categoryCount}}</h1>
+        </div>
+
+
+        <div class="card">
+            <div class="card-inner">
+                <h3>Table</h3>
+                <mat-icon class="material-icons-outlined">
+                    table_restaurant</mat-icon>
+            </div>
+            <h1>{{tableCount}}</h1>
+        </div>
+
+
+        <div class="card">
+            <div class="card-inner">
+                <h3>Ingredient</h3>
+                <mat-icon class="material-icons-outlined">restaurant_menu</mat-icon>
+            </div>
+            <h1>{{ingredientCount}}</h1>
+        </div>
+    </div>
+
+
+    
+    
+    <div >
+        <div fxFlex="49%" fxFlex.md="49%" fxFlex.sm="97%" fxFlex.xs="95%" >
+    <canvas
+        baseChart
+        class="chart"
+        [data]="lineChartData"
+        [options]="lineChartOptions"
+        [type]="lineChartType"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)"
+    ></canvas>
+</div>
+<div fxFlex="49%" fxFlex.md="49%" fxFlex.sm="97%" fxFlex.xs="95%" >
+
+    <canvas
+        baseChart
+        class="chart"
+        [data]="barChartData"
+        [options]="barChartOptions"
+        [plugins]="barChartPlugins"
+        [type]="barChartType"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)"
+        >
+    </canvas>
+</div>
+    
+</div>
+        
+</main>

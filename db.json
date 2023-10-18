@@ -1,23 +1,23 @@
 {
   "table": [
     {
-      "isBusy": false,
+      "isBusy": true,
       "id": 7,
-      "recipeId": 0,
+      "recipeId": 173,
       "value": "T02",
       "name": "Floor 1"
     },
     {
-      "isBusy": false,
+      "isBusy": true,
       "id": 8,
-      "recipeId": 0,
+      "recipeId": 172,
       "value": "T02",
       "name": "Floor 1"
     },
     {
-      "isBusy": false,
+      "isBusy": true,
       "id": 12,
-      "recipeId": 0,
+      "recipeId": 174,
       "value": "T01",
       "name": "Floor 2"
     },
@@ -32,7 +32,7 @@
   "menu": [
     {
       "name": "Hamburger ",
-      "price": "5",
+      "price": 5,
       "outStock": 0.2,
       "id": 1,
       "ingredient": "beef",
@@ -41,7 +41,7 @@
     },
     {
       "name": "pizza",
-      "price": "10",
+      "price": 10,
       "outStock": 0.5,
       "id": 2,
       "ingredient": "pork",
@@ -49,7 +49,7 @@
       "iconSrc": "pizza.png"
     },
     {
-      "price": "2",
+      "price": 2,
       "outStock": 0.2,
       "name": "sandwich ",
       "id": 3,
@@ -61,9 +61,18 @@
       "name": "soup",
       "ingredient": "duck",
       "category": "Fast-Food",
-      "price": "5",
+      "price": 5,
       "outStock": 0.5,
       "id": 18,
+      "iconSrc": "ramen.png"
+    },
+    {
+      "name": "bean",
+      "ingredient": "chicken",
+      "category": "drink",
+      "price": 2,
+      "outStock": 0,
+      "id": 19,
       "iconSrc": "ramen.png"
     }
   ],
@@ -128,7 +137,7 @@
       "email": "leng@gmail.com",
       "password": "1234",
       "confirmpassword": "1234",
-      "id": 6
+      "id": 7
     }
   ],
   "category": [
@@ -139,506 +148,20 @@
     {
       "menu": "drink",
       "id": 2
+    },
+    {
+      "menu": "Food",
+      "id": 3
     }
   ],
   "recipe": [
     {
-      "order": {
-        "name": "soup",
-        "ingredient": "duck",
-        "category": "Fast-Food",
-        "price": "5",
-        "outStock": 0.5,
-        "id": 18,
-        "iconSrc": "ramen.png"
-      },
-      "id": 1
-    },
-    {
-      "order": {
-        "price": "2",
-        "outStock": 0.2,
-        "name": "sandwich ",
-        "id": 3,
-        "ingredient": "beef",
-        "category": "Fast-Food",
-        "iconSrc": "taco.png"
-      },
-      "id": 2
-    },
-    {
-      "name": "any",
-      "price": 0,
-      "units": 1,
-      "id": 106
-    },
-    {
-      "name": "any",
-      "price": 0,
-      "units": 1,
-      "id": 107
-    },
-    {
-      "id": 108,
-      "order": [
-        {
-          "name": "soup",
-          "price": "5",
-          "units": 3,
-          "id": 1
-        },
-        {
-          "name": "sandwich ",
-          "price": "2",
-          "units": 2,
-          "id": 2
-        },
-        {
-          "name": "pizza",
-          "price": "10",
-          "units": 2,
-          "id": 3
-        }
-      ]
-    },
-    {
-      "name": "any",
-      "price": 0,
-      "units": 1,
-      "id": 109
-    },
-    {
-      "name": "any",
-      "price": 0,
-      "units": 1,
-      "id": 110
-    },
-    {
-      "name": "any",
-      "price": 0,
-      "units": 1,
-      "id": 111
-    },
-    {
-      "name": "any",
-      "price": 0,
-      "units": 1,
-      "id": 112
-    },
-    {
-      "name": "any",
-      "price": 0,
-      "units": 1,
-      "id": 113
-    },
-    {
-      "order": [
-        {
-          "name": "soup",
-          "price": "5",
-          "units": 3,
-          "id": 1
-        },
-        {
-          "name": "sandwich ",
-          "price": "2",
-          "units": 2,
-          "id": 2
-        },
-        {
-          "name": "pizza",
-          "price": "10",
-          "units": 2,
-          "id": 3
-        }
-      ],
-      "id": 114
-    },
-    {
-      "order": [
-        {
-          "name": "soup",
-          "price": "5",
-          "units": 3,
-          "id": 1
-        },
-        {
-          "name": "sandwich ",
-          "price": "2",
-          "units": 2,
-          "id": 2
-        },
-        {
-          "name": "pizza",
-          "price": "10",
-          "units": 2,
-          "id": 3
-        }
-      ],
-      "id": 115
-    },
-    {
-      "order": [
-        {
-          "name": "sandwich ",
-          "units": 2,
-          "id": 3,
-          "price": "2",
-          "isHave": true
-        },
-        {
-          "name": "soup",
-          "units": 2,
-          "id": 18,
-          "price": "5",
-          "isHave": true
-        },
-        {
-          "name": "pizza",
-          "units": 2,
-          "id": 2,
-          "price": "10",
-          "isHave": true
-        }
-      ],
-      "id": 116
-    },
-    {
-      "order": [
-        {
-          "name": "soup",
-          "units": 2,
-          "id": 18,
-          "price": "5",
-          "isHave": true
-        },
-        {
-          "name": "sandwich ",
-          "units": 2,
-          "id": 3,
-          "price": "2",
-          "isHave": true
-        },
-        {
-          "name": "pizza",
-          "units": 2,
-          "id": 2,
-          "price": "10",
-          "isHave": true
-        },
-        {
-          "name": "Hamburger ",
-          "units": 2,
-          "id": 1,
-          "price": "5",
-          "isHave": true
-        }
-      ],
-      "id": 117
-    },
-    {
-      "order": [
-        {
-          "name": "soup",
-          "units": 6,
-          "id": 18,
-          "price": "5",
-          "isHave": true
-        },
-        {
-          "name": "sandwich ",
-          "units": 4,
-          "id": 3,
-          "price": "2",
-          "isHave": true
-        },
-        {
-          "name": "pizza",
-          "units": 4,
-          "id": 2,
-          "price": "10",
-          "isHave": true
-        }
-      ],
-      "id": 122
-    },
-    {
       "order": [
         {
           "name": "soup",
           "units": 1,
           "id": 18,
-          "price": "5",
-          "isHave": true
-        },
-        {
-          "name": "sandwich ",
-          "units": 1,
-          "id": 3,
-          "price": "2",
-          "isHave": true
-        },
-        {
-          "name": "pizza",
-          "units": 1,
-          "id": 2,
-          "price": "10",
-          "isHave": true
-        },
-        {
-          "name": "Hamburger ",
-          "units": 1,
-          "id": 1,
-          "price": "5",
-          "isHave": true
-        }
-      ],
-      "id": 123
-    },
-    {
-      "order": [
-        {
-          "name": "soup",
-          "units": 12,
-          "id": 18,
-          "price": "5",
-          "isHave": true
-        },
-        {
-          "name": "sandwich ",
-          "units": 9,
-          "id": 3,
-          "price": "2",
-          "isHave": true
-        },
-        {
-          "name": "pizza",
-          "units": 3,
-          "id": 2,
-          "price": "10",
-          "isHave": true
-        }
-      ],
-      "id": 126
-    },
-    {
-      "order": [
-        {
-          "name": "sandwich ",
-          "units": 2,
-          "id": 3,
-          "price": "2",
-          "isHave": true
-        },
-        {
-          "name": "pizza",
-          "units": 1,
-          "id": 2,
-          "price": "10",
-          "isHave": true
-        },
-        {
-          "name": "Hamburger ",
-          "units": 1,
-          "id": 1,
-          "price": "5",
-          "isHave": true
-        }
-      ],
-      "id": 128
-    },
-    {
-      "order": [
-        {
-          "name": "sandwich ",
-          "units": 3,
-          "id": 3,
-          "price": "2",
-          "isHave": true
-        },
-        {
-          "name": "pizza",
-          "units": 1,
-          "id": 2,
-          "price": "10",
-          "isHave": true
-        },
-        {
-          "name": "Hamburger ",
-          "units": 1,
-          "id": 1,
-          "price": "5",
-          "isHave": true
-        },
-        {
-          "name": "soup",
-          "units": 2,
-          "id": 18,
-          "price": "5",
-          "isHave": true
-        }
-      ],
-      "id": 129
-    },
-    {
-      "order": [
-        {
-          "name": "soup",
-          "units": 1,
-          "id": 18,
-          "price": "5",
-          "isHave": true
-        }
-      ],
-      "id": 134
-    },
-    {
-      "order": [
-        {
-          "name": "soup",
-          "units": 8,
-          "id": 18,
-          "price": "5",
-          "isHave": true
-        },
-        {
-          "name": "sandwich ",
-          "units": 7,
-          "id": 3,
-          "price": "2",
-          "isHave": true
-        },
-        {
-          "name": "pizza",
-          "units": 3,
-          "id": 2,
-          "price": "10",
-          "isHave": true
-        }
-      ],
-      "id": 135
-    },
-    {
-      "order": [
-        {
-          "name": "soup",
-          "units": 5,
-          "id": 18,
-          "price": "5",
-          "isHave": true
-        },
-        {
-          "name": "sandwich ",
-          "units": 5,
-          "id": 3,
-          "price": "2",
-          "isHave": true
-        },
-        {
-          "name": "pizza",
-          "units": 3,
-          "id": 2,
-          "price": "10",
-          "isHave": true
-        },
-        {
-          "name": "Hamburger ",
-          "units": 1,
-          "id": 1,
-          "price": "5",
-          "isHave": true
-        }
-      ],
-      "id": 136
-    },
-    {
-      "order": [],
-      "id": 137
-    },
-    {
-      "order": [],
-      "id": 138
-    },
-    {
-      "order": [],
-      "id": 139
-    },
-    {
-      "order": [],
-      "id": 140
-    },
-    {
-      "order": [],
-      "id": 141
-    },
-    {
-      "order": [],
-      "id": 142
-    },
-    {
-      "order": [],
-      "id": 143
-    },
-    {
-      "order": [],
-      "id": 144
-    },
-    {
-      "order": [],
-      "id": 145
-    },
-    {
-      "order": [],
-      "id": 146
-    },
-    {
-      "order": [],
-      "id": 147
-    },
-    {
-      "order": [],
-      "id": 148
-    },
-    {
-      "order": [
-        {
-          "name": "soup",
-          "units": 1,
-          "id": 18,
-          "price": "5",
-          "isHave": true
-        },
-        {
-          "name": "sandwich ",
-          "units": 1,
-          "id": 3,
-          "price": "2",
-          "isHave": true
-        },
-        {
-          "name": "pizza",
-          "units": 1,
-          "id": 2,
-          "price": "10",
-          "isHave": true
-        },
-        {
-          "name": "Hamburger ",
-          "units": 1,
-          "id": 1,
-          "price": "5",
-          "isHave": true
-        }
-      ],
-      "id": 149
-    },
-    {
-      "order": [
-        {
-          "name": "soup",
-          "units": 1,
-          "id": 18,
-          "price": "5",
+          "price": 5,
           "isHave": true,
           "date": "2023-10-11T09:29:54.446Z",
           "granTotal": 0,
@@ -648,7 +171,7 @@
           "name": "sandwich ",
           "units": 2,
           "id": 3,
-          "price": "2",
+          "price": 2,
           "isHave": true,
           "date": "2023-10-11T09:29:54.446Z",
           "granTotal": 5,
@@ -658,7 +181,7 @@
           "name": "pizza",
           "units": 2,
           "id": 2,
-          "price": "10",
+          "price": 10,
           "isHave": true,
           "date": "2023-10-11T09:29:54.446Z",
           "granTotal": 7,
@@ -668,7 +191,7 @@
           "name": "Hamburger ",
           "units": 1,
           "id": 1,
-          "price": "5",
+          "price": 5,
           "isHave": true,
           "date": "2023-10-11T09:29:54.446Z",
           "granTotal": 17,
@@ -676,6 +199,317 @@
         }
       ],
       "id": 150
+    },
+    {
+      "order": [
+        {
+          "name": "pizza",
+          "units": 1,
+          "id": 2,
+          "price": "10",
+          "isHave": true,
+          "date": "2023-10-17T09:09:02.033Z",
+          "granTotal": 0,
+          "grandUnits": 0
+        },
+        {
+          "name": "Hamburger ",
+          "units": 1,
+          "id": 1,
+          "price": "5",
+          "isHave": true,
+          "date": "2023-10-17T09:09:02.033Z",
+          "granTotal": 10,
+          "grandUnits": 1
+        },
+        {
+          "name": "sandwich ",
+          "units": 1,
+          "id": 3,
+          "price": "2",
+          "isHave": true,
+          "date": "2023-10-17T09:09:02.033Z",
+          "granTotal": 15,
+          "grandUnits": 2
+        }
+      ],
+      "id": 151
+    },
+    {
+      "order": [
+        {
+          "name": "soup",
+          "units": 2,
+          "id": 18,
+          "price": 5,
+          "isHave": true,
+          "date": "2023-10-17T09:15:30.694Z",
+          "granTotal": 0,
+          "grandUnits": 0
+        },
+        {
+          "name": "sandwich ",
+          "units": 1,
+          "id": 3,
+          "price": 2,
+          "isHave": true,
+          "date": "2023-10-17T09:18:16.656Z",
+          "granTotal": 10,
+          "grandUnits": 2
+        }
+      ],
+      "id": 153
+    },
+    {
+      "order": [
+        {
+          "name": "soup",
+          "units": 1,
+          "id": 18,
+          "price": 5,
+          "isHave": true,
+          "date": "2023-10-17T09:20:19.756Z",
+          "granTotal": 0,
+          "grandUnits": 0
+        }
+      ],
+      "id": 154
+    },
+    {
+      "order": [
+        {
+          "name": "sandwich ",
+          "units": 1,
+          "id": 3,
+          "price": 2,
+          "isHave": true,
+          "date": "2023-10-17T09:21:02.162Z",
+          "granTotal": 0,
+          "grandUnits": 0
+        },
+        {
+          "name": "soup",
+          "units": 1,
+          "id": 18,
+          "price": 5,
+          "isHave": true,
+          "date": "2023-10-17T09:21:02.162Z",
+          "granTotal": 2,
+          "grandUnits": 1
+        }
+      ],
+      "id": 155
+    },
+    {
+      "order": [
+        {
+          "name": "soup",
+          "units": 2,
+          "id": 18,
+          "price": 5,
+          "isHave": true,
+          "date": "2023-10-17T09:21:50.086Z",
+          "granTotal": 0,
+          "grandUnits": 0
+        },
+        {
+          "name": "sandwich ",
+          "units": 1,
+          "id": 3,
+          "price": 2,
+          "isHave": true,
+          "date": "2023-10-17T09:21:50.086Z",
+          "granTotal": 5,
+          "grandUnits": 1
+        }
+      ],
+      "id": 156
+    },
+    {
+      "order": [
+        {
+          "name": "soup",
+          "units": 1,
+          "id": 18,
+          "price": 5,
+          "isHave": true,
+          "date": "2023-10-17T09:22:58.123Z",
+          "granTotal": 0,
+          "grandUnits": 0
+        }
+      ],
+      "id": 157
+    },
+    {
+      "order": [],
+      "id": 158
+    },
+    {
+      "order": [
+        {
+          "name": "soup",
+          "units": 1,
+          "id": 18,
+          "price": 5,
+          "isHave": true,
+          "date": "2023-10-17T09:30:50.041Z",
+          "granTotal": 0,
+          "grandUnits": 0
+        }
+      ],
+      "id": 160
+    },
+    {
+      "order": [
+        {
+          "name": "soup",
+          "units": 1,
+          "id": 18,
+          "price": 5,
+          "isHave": true,
+          "date": "2023-10-17T09:39:07.522Z",
+          "granTotal": 0,
+          "grandUnits": 0
+        },
+        {
+          "name": "sandwich ",
+          "units": 1,
+          "id": 3,
+          "price": 2,
+          "isHave": true,
+          "date": "2023-10-17T09:39:07.522Z",
+          "granTotal": 5,
+          "grandUnits": 1
+        }
+      ],
+      "id": 164
+    },
+    {
+      "order": [
+        {
+          "name": "soup",
+          "units": 1,
+          "id": 18,
+          "price": 5,
+          "isHave": true,
+          "date": "2023-10-17T09:41:16.340Z",
+          "granTotal": 0,
+          "grandUnits": 0
+        },
+        {
+          "name": "sandwich ",
+          "units": 1,
+          "id": 3,
+          "price": 2,
+          "isHave": true,
+          "date": "2023-10-17T09:41:16.340Z",
+          "granTotal": 5,
+          "grandUnits": 1
+        }
+      ],
+      "id": 165
+    },
+    {
+      "order": [
+        {
+          "name": "soup",
+          "units": 2,
+          "id": 18,
+          "price": 5,
+          "isHave": true,
+          "date": "2023-10-17T09:47:02.406Z",
+          "granTotal": 0,
+          "grandUnits": 0
+        },
+        {
+          "name": "sandwich ",
+          "units": 1,
+          "id": 3,
+          "price": 2,
+          "isHave": true,
+          "date": "2023-10-17T09:47:02.406Z",
+          "granTotal": 5,
+          "grandUnits": 1
+        },
+        {
+          "name": "bean",
+          "units": 1,
+          "id": 19,
+          "price": 2,
+          "isHave": true,
+          "date": "2023-10-18T01:13:53.696Z",
+          "granTotal": 7,
+          "grandUnits": 2
+        }
+      ],
+      "id": 166
+    },
+    {
+      "order": [
+        {
+          "name": "soup",
+          "units": 1,
+          "id": 18,
+          "price": 5,
+          "isHave": true,
+          "date": "2023-10-17T09:48:55.097Z",
+          "granTotal": 0,
+          "grandUnits": 0
+        },
+        {
+          "name": "sandwich ",
+          "units": 1,
+          "id": 3,
+          "price": 2,
+          "isHave": true,
+          "date": "2023-10-17T09:48:55.097Z",
+          "granTotal": 5,
+          "grandUnits": 1
+        }
+      ],
+      "id": 169
+    },
+    {
+      "order": [
+        {
+          "name": "soup",
+          "units": 1,
+          "id": 18,
+          "price": 5,
+          "isHave": true,
+          "date": "2023-10-18T02:06:53.521Z",
+          "granTotal": 0,
+          "grandUnits": 0
+        }
+      ],
+      "id": 170
+    },
+    {
+      "order": [
+        {
+          "name": "sandwich ",
+          "units": 1,
+          "id": 3,
+          "price": 2,
+          "isHave": true,
+          "date": "2023-10-18T02:07:50.081Z",
+          "granTotal": 0,
+          "grandUnits": 0
+        }
+      ],
+      "id": 171
+    },
+    {
+      "order": [],
+      "id": 172
+    },
+    {
+      "order": [],
+      "id": 173
+    },
+    {
+      "order": [],
+      "id": 174
     }
   ]
 }

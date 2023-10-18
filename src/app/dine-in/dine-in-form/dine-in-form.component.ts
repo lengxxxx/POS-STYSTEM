@@ -33,7 +33,7 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
   subTotal: Total[] = []
   granTotal: number = 0
   grandUnits: number = 0
-  recipeId?: number
+  recipeId!: number
   _tableId: string | number | null = 0;
   data_table!: Table;
   myDate = new Date();
@@ -53,6 +53,7 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
       this.data_table.id = this._tableId
 
     this.getRecipeId();
+    
   }
 
 
@@ -73,7 +74,7 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
     this.tableService.getTableById(this._tableId).subscribe((res) => {
       this.data_table = res
       this.recipeId = res.recipeId;
-      this.getRecipe(res.recipeId);
+      this.getRecipe(this.recipeId);
     })
   };
 
@@ -94,9 +95,7 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
   }
 
   onCheckOut( ) {
-    
     this._tableId = this.route.snapshot.paramMap.get('tableId');
-    
     console.log("data_table::", this.data_table);
     
     const newData: Table = {
@@ -107,22 +106,26 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
       "name": this.data_table.name,
       "grandTotal": this.data_table.grandTotal,
       "grandUnits": this.data_table.grandUnits,
-      
     }
-
+    
+    if(this.order.length <= 0){
+      this.recipeService.delete(this.recipeId).subscribe();
+    }
+    
     this.tableService.putTable(newData).subscribe((res => {
       this.router.navigate([`/dine-in`]);
     }))
   };
 
-  getRecipe(id: number | undefined) {
+  getRecipe(id: number ) {
+    
+    console.log("!!id", !!id);
+    
     if (!!id) {
-      
       this.recipeService.gets(id).subscribe((res) => {
         this.order = (res as ResponseModel).order;
         this.getUnits();
         this.getTotal();
-        
       });
     } else {
       let order: Recipe = {
@@ -132,7 +135,7 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
         "units": 0,
         "date": this.myDate,
       }
-      this.recipeService.post(order).subscribe((res) => {
+      this.recipeService.post().subscribe((res) => {
         this._tableId = this.route.snapshot.paramMap.get('tableId');
         if (res.id != undefined) {
           const data: Table = {
@@ -146,6 +149,7 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
             
           }))
         }
+        // this.getRecipe(this.recipeId);
       })
     }
   }
@@ -153,8 +157,6 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
   getTotal() {
     const array_price: any = this.order.map(p => p.price * p.units)
     this.granTotal = array_price.reduce((a: number, b: number) => a + b, 0)
-    console.log("this.granTotal::",this.granTotal);
-    
   }
 
   getUnits() {
@@ -163,6 +165,9 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
   }
 
   onPress(order: any) {
+    
+    console.log("order::", order)
+    
     if (this.recipeId !== undefined) {
       const array: any = this.order.map(o => o.name);
       let isExits: boolean = false;

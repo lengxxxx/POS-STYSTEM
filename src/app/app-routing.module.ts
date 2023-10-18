@@ -14,8 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { DineInComponent } from './dine-in/dine-in.component';
 import { DineInFormComponent } from './dine-in/dine-in-form/dine-in-form.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 
 const routes: Routes = [
 
@@ -33,9 +32,7 @@ const routes: Routes = [
   { path: 'signup', component: SignUpComponent},
   { path: 'dine-in', component: DineInComponent},
   { path: 'dine-in/:tableId', component: DineInFormComponent},
-  { path: 'dashboard' , component: DashboardComponent},
-  
-  
+  { path: 'dashboard', component: DashboardComponent},
   // otherwise redirect to home
   // { path: '**', redirectTo: '' },
 ];
@@ -44,4 +41,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  
+ }
