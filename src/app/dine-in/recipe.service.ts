@@ -4,8 +4,9 @@ import { Observable } from 'rxjs';
 import { Recipe } from './recipe';
 import { Table } from '../Settings/table/table';
 import { ResponseModel } from '../_helper/responseModel';
+import { recipe } from './total';
 
-const httpOptions = {
+export const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
   }),
@@ -21,11 +22,14 @@ export class RecipeService {
   uri = "/user/param/v1";
   private apiUrl = 'http://localhost:5000/recipe';
 
-  
   gets(id: number): Observable<ResponseModel> {
-    
     const url = `${this.apiUrl}/${id}`
     return this.http.get<ResponseModel>(url);
+  }
+  
+  getAll(): Observable<ResponseModel[]> {
+    const url = this.apiUrl
+    return this.http.get<ResponseModel[]>(url);
   }
 
   post(): Observable<Recipe> {
@@ -48,4 +52,7 @@ export class RecipeService {
     const url = `${this.apiUrl}/${id}`
     return this.http.delete<Recipe[]>(url ,httpOptions);
   }
+  
+  
+  
 }

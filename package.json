@@ -25,6 +25,10 @@
     "@material/form-field": "^15.0.0-canary.bc9ae6c9c.0",
     "@ngneat/transloco": "^3.2.0",
     "chart.js": "^4.4.0",
+    "chartjs-plugin-annotation": "^3.0.1",
+    "chartjs-plugin-datalabels": "^2.2.0",
+    "json-server": "^0.17.3",
+    "ng2-charts": "^5.0.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

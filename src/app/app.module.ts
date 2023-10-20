@@ -50,7 +50,7 @@ import { DineInComponent } from './dine-in/dine-in.component';
 import { DineInFormComponent } from './dine-in/dine-in-form/dine-in-form.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { NgChartsModule } from 'ng2-charts';
-
+import {MatGridListModule} from '@angular/material/grid-list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -109,7 +109,7 @@ import { NgChartsModule } from 'ng2-charts';
     MatInputModule,
     MatSelectModule,
     HttpClientModule,
-   
+    MatGridListModule,
   ],
   providers: [
     // { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

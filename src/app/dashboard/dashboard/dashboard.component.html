@@ -40,14 +40,16 @@
                 <mat-icon class="material-icons-outlined">restaurant_menu</mat-icon>
             </div>
             <h1>{{ingredientCount}}</h1>
+            
         </div>
     </div>
 
+      
 
     
     
     <div >
-        <div fxFlex="49%" fxFlex.md="49%" fxFlex.sm="97%" fxFlex.xs="95%" >
+        <!-- <div fxFlex="49%" fxFlex.md="49%" fxFlex.sm="97%" fxFlex.xs="95%" >
     <canvas
         baseChart
         class="chart"
@@ -57,8 +59,8 @@
         (chartHover)="chartHovered($event)"
         (chartClick)="chartClicked($event)"
     ></canvas>
-</div>
-<div fxFlex="49%" fxFlex.md="49%" fxFlex.sm="97%" fxFlex.xs="95%" >
+</div> -->
+<!-- <div fxFlex="49%" fxFlex.md="49%" fxFlex.sm="97%" fxFlex.xs="95%" >
 
     <canvas
         baseChart
@@ -71,8 +73,18 @@
         (chartClick)="chartClicked($event)"
         >
     </canvas>
-</div>
+</div> -->
     
+<div fxFlex="49%" fxFlex.md="49%" fxFlex.sm="97%" fxFlex.xs="95%" >
+
+<div class="row">
+    <div class="col-lg-6">
+        <!-- <h2>Pie Chart</h2> -->
+        <canvas id="piechart"></canvas>
+    </div>
+</div>
+</div>
+
 </div>
         
 </main>

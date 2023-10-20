@@ -3,21 +3,21 @@
     {
       "isBusy": true,
       "id": 7,
-      "recipeId": 173,
+      "recipeId": 177,
       "value": "T02",
       "name": "Floor 1"
     },
     {
-      "isBusy": true,
+      "isBusy": false,
       "id": 8,
-      "recipeId": 172,
+      "recipeId": 0,
       "value": "T02",
       "name": "Floor 1"
     },
     {
-      "isBusy": true,
+      "isBusy": false,
       "id": 12,
-      "recipeId": 174,
+      "recipeId": 0,
       "value": "T01",
       "name": "Floor 2"
     },
@@ -27,6 +27,39 @@
       "recipeId": 0,
       "value": "T02",
       "name": "Floor 2"
+    },
+    {
+      "name": "Floor 2",
+      "value": "T03",
+      "id": 14
+    }
+  ],
+  "sale": [
+    {
+      "id": 2014,
+      "year": 2014,
+      "amount": 20,
+      "colorcode": "darkred"
+    },
+    {
+      "year": 2012,
+      "amount": 50,
+      "colorcode": "blue"
+    },
+    {
+      "year": 2013,
+      "amount": 150,
+      "colorcode": "green"
+    },
+    {
+      "year": 2015,
+      "amount": 200,
+      "colorcode": "gray"
+    },
+    {
+      "year": 2011,
+      "amount": 100,
+      "colorcode": "black"
     }
   ],
   "menu": [
@@ -74,6 +107,14 @@
       "outStock": 0,
       "id": 19,
       "iconSrc": "ramen.png"
+    },
+    {
+      "name": "cafee",
+      "ingredient": "beef",
+      "category": "Food",
+      "price": 4,
+      "outStock": 2,
+      "id": 20
     }
   ],
   "ingredient": [
@@ -101,10 +142,10 @@
   "stock": [
     {
       "ingredient": "beef",
-      "value": 17,
+      "value": 16,
       "id": 1,
       "newValue": 0,
-      "issum": true
+      "issum": false
     },
     {
       "ingredient": "chicken",
@@ -138,6 +179,14 @@
       "password": "1234",
       "confirmpassword": "1234",
       "id": 7
+    },
+    {
+      "firstname": "leng",
+      "lastname": "leng",
+      "email": "leng@gmail.com",
+      "password": "1234",
+      "confirmpassword": "1234",
+      "id": 8
     }
   ],
   "category": [
@@ -500,16 +549,123 @@
       "id": 171
     },
     {
-      "order": [],
+      "order": [
+        {
+          "name": "sandwich ",
+          "units": 6,
+          "id": 3,
+          "price": 2,
+          "isHave": true,
+          "date": "2023-10-19T08:38:57.728Z",
+          "granTotal": 0,
+          "grandUnits": 0
+        }
+      ],
       "id": 172
     },
     {
-      "order": [],
+      "order": [
+        {
+          "name": "sandwich ",
+          "units": 1,
+          "id": 3,
+          "price": 2,
+          "isHave": true,
+          "date": "2023-10-19T08:39:03.371Z",
+          "granTotal": 0,
+          "grandUnits": 0
+        }
+      ],
       "id": 173
     },
     {
-      "order": [],
+      "order": [
+        {
+          "name": "sandwich ",
+          "units": 1,
+          "id": 3,
+          "price": 2,
+          "isHave": true,
+          "date": "2023-10-19T08:40:34.961Z",
+          "granTotal": 0,
+          "grandUnits": 0
+        }
+      ],
       "id": 174
+    },
+    {
+      "order": [
+        {
+          "name": "soup",
+          "units": 1,
+          "id": 18,
+          "price": 5,
+          "isHave": true,
+          "date": "2023-10-20T03:10:10.061Z",
+          "granTotal": 0,
+          "grandUnits": 0
+        },
+        {
+          "name": "sandwich ",
+          "units": 1,
+          "id": 3,
+          "price": 2,
+          "isHave": true,
+          "date": "2023-10-20T03:10:10.061Z",
+          "granTotal": 5,
+          "grandUnits": 1
+        },
+        {
+          "name": "Hamburger ",
+          "units": 1,
+          "id": 1,
+          "price": 5,
+          "isHave": true,
+          "date": "2023-10-20T03:10:10.061Z",
+          "granTotal": 7,
+          "grandUnits": 2
+        },
+        {
+          "name": "bean",
+          "units": 1,
+          "id": 19,
+          "price": 2,
+          "isHave": true,
+          "date": "2023-10-20T03:10:10.061Z",
+          "granTotal": 12,
+          "grandUnits": 3
+        }
+      ],
+      "id": 175
+    },
+    {
+      "order": [
+        {
+          "name": "soup",
+          "units": 1,
+          "id": 18,
+          "price": 5,
+          "isHave": true,
+          "date": "2023-10-20T03:45:18.898Z",
+          "granTotal": 0,
+          "grandUnits": 0
+        },
+        {
+          "name": "sandwich ",
+          "units": 2,
+          "id": 3,
+          "price": 2,
+          "isHave": true,
+          "date": "2023-10-20T03:45:18.898Z",
+          "granTotal": 5,
+          "grandUnits": 1
+        }
+      ],
+      "id": 176
+    },
+    {
+      "order": [],
+      "id": 177
     }
   ]
 }

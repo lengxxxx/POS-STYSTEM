@@ -40,7 +40,6 @@ export class MenuFormComponent {
 
   onSubmit(f: NgForm) {
     console.log("this.menuService---",this.menu);
-    
     if (!f.valid) {
       return;
     }

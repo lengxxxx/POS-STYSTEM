@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { Chart, ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Chart, ChartConfiguration, ChartData, ChartEvent, ChartType, registerables } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import DataLabelsPlugin from 'chartjs-plugin-datalabels';
 import Annotation from 'chartjs-plugin-annotation';
@@ -7,13 +7,19 @@ import { MenuService } from 'src/app/Settings/menu/menu.service';
 import { CategoryService } from 'src/app/Settings/category/category.service';
 import { TableService } from 'src/app/Settings/table/table.service';
 import { IngredientService } from 'src/app/Settings/ingredient/ingredient.service';
-
+import { RecipeService } from 'src/app/dine-in/recipe.service';
+import { ResponseModel } from 'src/app/_helper/responseModel';
+import { Total, recipe } from 'src/app/dine-in/total';
+import { DashboardService } from './dashboard.service';
+import {} from 'node_modules/chart.js'
+import { Sale } from './dashboard';
+Chart.register(...registerables)
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined ;
   private newLabel? = 'label';
   public lineChartType: ChartType = 'line';
@@ -21,25 +27,75 @@ export class DashboardComponent {
   categoryCount!: number;
   tableCount!:number;
   ingredientCount!: number;
+  orderCount!:number;
+  chartdata:any
+  labeldata:any[]=[];
+  realdata:any[]=[];
+  colordata:any[]=[];
 
   constructor(
     private menuService: MenuService,
     private categoryService: CategoryService,
     private tableService: TableService,
-    private ingredientService: IngredientService
+    private ingredientService: IngredientService,
+    private recipeService:RecipeService,
+    private service: DashboardService,
+    
   ) {
     Chart.register(Annotation);
     
-    
     this.getAll();
-    
  
+  }
+  
+  ngOnInit(): void {
+   
+    this.service.Getchartinfo().subscribe(result => {
+      this.chartdata = result;
+      if(this.chartdata!=null){
+        for(let i=0; i<this.chartdata.length; i++){
+          console.log("this.chartdata:::",this.chartdata[i]);
+          this.labeldata.push(this.chartdata[i].year);
+          this.realdata.push(this.chartdata[i].amount);
+          this.colordata.push(this.chartdata[i].colorcode);
+        }
+        
+        this.RenderChart(this.labeldata,this.realdata,this.colordata);
+      }
+      
+    })
+   
+  }
+  RenderChart(labeldata:any,maindata:any,colordata:any){
+    const myChart = new Chart("piechart", {
+      type: 'bar',
+      data: {
+          labels:​labeldata ,
+          datasets: [{
+              label: 'sale',
+              data: maindata,
+              backgroundColor: colordata,
+              borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true
+              }
+          }
+      }
+  });
   }
   
   
   getAll() {
     this.menuService.gets().subscribe((res) => {
-      console.log("res::",res);
+      // console.log("res::",res);
       this.menuCount = res.length;
     });
     
@@ -54,47 +110,68 @@ export class DashboardComponent {
     
     this.ingredientService.gets().subscribe((res) => {
       this.ingredientCount = res.length ;
-      
     });
-    
-    
-  }
-
+      
+    this.recipeService.getAll().subscribe((res) => {
+      console.log("res::",res.length);
+      this.orderCount = res.length;
+        const data: Sale = {
+          "id":  2014,
+          "year": 2014,
+          "amount": res.length,
+          "colorcode": "darkred"
+        }
+      this.service.put(2014,data).subscribe(res => {
+        console.log(res, "???s");
+      })
+      // this.orderCount = res[0].order ;
+      let _arr : Total[] = res[0].order 
+      // const array: any = _arr.map(o => o.price);
+      // this.dataSet = array ;
+      
+      
+      const array_price: any = _arr.map(p => p.price * p.units)
+    // this.granTotal = array_price.reduce((a: number, b: number) => a + b, 0)
+      
+  });
+  
+}
+  
   public lineChartData: ChartConfiguration['data'] = {
     datasets: [
-      {
-        data: [65, 59, 80, 81, 56, 55, 40],
-        label: 'Food',
-        backgroundColor: 'rgba(148,159,177,0.2)',
-        borderColor: 'rgba(148,159,177,1)',
-        pointBackgroundColor: 'rgba(148,159,177,1)',
-        pointBorderColor: '#fff',
-        pointHoverBackgroundColor: '#fff',
-        pointHoverBorderColor: 'rgba(148,159,177,0.8)',
-        fill: 'origin',
-      },
-      {
-        data: [75, 49, 90, 91, 66, 65, 30],
-        label: 'Category',
-        backgroundColor: 'rgba(148,0,177,0.2)',
-        borderColor: 'rgba(148,0,177,1)',
-        pointBackgroundColor: 'rgba(148,0,177,1)',
-        pointBorderColor: '#fff',
-        pointHoverBackgroundColor: '#fff',
-        pointHoverBorderColor: 'rgba(148,159,177,0.8)',
-        fill: 'origin',
-      },
-      {
-        data: [28, 48, 40, 19, 86, 27, 90],
-        label: 'Stock',
-        backgroundColor: 'rgba(77,83,96,0.2)',
-        borderColor: 'rgba(77,83,96,1)',
-        pointBackgroundColor: 'rgba(77,83,96,1)',
-        pointBorderColor: '#fff',
-        pointHoverBackgroundColor: '#fff',
-        pointHoverBorderColor: 'rgba(77,83,96,1)',
-        fill: 'origin',
-      },
+      // {
+      //   data: this.dataSet,
+      //   label: 'Food',
+      //   backgroundColor: 'rgba(148,159,177,0.2)',
+      //   borderColor: 'rgba(148,159,177,1)',
+      //   pointBackgroundColor: 'rgba(148,159,177,1)',
+      //   pointBorderColor: '#fff',
+      //   pointHoverBackgroundColor: '#fff',
+      //   pointHoverBorderColor: 'rgba(148,159,177,0.8)',
+      //   fill: 'origin',
+      // },
+      // {
+      //   data: [75, 49, 90, 91, 66, 65, 30],
+      //   label: 'Category',
+      //   backgroundColor: 'rgba(148,0,177,0.2)',
+      //   borderColor: 'rgba(148,0,177,1)',
+      //   pointBackgroundColor: 'rgba(148,0,177,1)',
+      //   pointBorderColor: '#fff',
+      //   pointHoverBackgroundColor: '#fff',
+      //   pointHoverBorderColor: 'rgba(148,159,177,0.8)',
+      //   fill: 'origin',
+      // },
+      // {
+      //   data: [28, 48, 40, 19, 86, 27, 90],
+      //   label: 'Stock',
+      //   backgroundColor: 'rgba(77,83,96,0.2)',
+      //   borderColor: 'rgba(77,83,96,1)',
+      //   pointBackgroundColor: 'rgba(77,83,96,1)',
+      //   pointBorderColor: '#fff',
+      //   pointHoverBackgroundColor: '#fff',
+      //   pointHoverBorderColor: 'rgba(77,83,96,1)',
+      //   fill: 'origin',
+      // },
       {
         data: [180, 480, 770, 90, 1000, 270, 400],
         label: 'Ingredient',
@@ -271,6 +348,12 @@ export class DashboardComponent {
 
     this.chart?.update();
   }
+  
+  priceOrder(){
+    // const array: any = this.order.map(o => o.name);
+  }
+  
+  
 }
 
 

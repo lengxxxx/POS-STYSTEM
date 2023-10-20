@@ -47,6 +47,7 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
     private tableService: TableService,
     private route: ActivatedRoute,
     private router: Router,
+    
   ) {
     this._tableId = this.route.snapshot.paramMap.get('tableId');
     if (this.data_table != undefined)
@@ -170,6 +171,8 @@ export class DineInFormComponent implements OnInit, AfterViewInit {
     
     if (this.recipeId !== undefined) {
       const array: any = this.order.map(o => o.name);
+      // console.log("arr::",array);
+      
       let isExits: boolean = false;
       const conditon = (e: string) => e == order.name ? true : false;
       const _arr = this.order.map((recipe: any, index: number) => {
