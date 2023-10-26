@@ -35,7 +35,7 @@ export class NavComponent {
     setTimeout(() => {
       // console.log('sleep');
       this.router.navigate(['/', 'login']);
-    }, );
+    }, 500);
     const options = {
       title: '',
       message: 'logout-confirm',

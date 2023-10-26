@@ -14,6 +14,13 @@ export class AppComponent {
   isAuth: boolean = false;
 
   constructor(private router: Router) {
+    
+    
+    console.log("???????? ", localStorage.getItem('isAuth'))
+    if(localStorage.getItem('isAuth') === null){
+      this.router.navigate(['/', 'login']);
+    }
+    
     if (localStorage.getItem('isAuth') == 'true') {
       this.isAuth = true;
     } else {
